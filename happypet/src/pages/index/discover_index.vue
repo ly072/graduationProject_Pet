@@ -1,13 +1,40 @@
 <template>
-<view  class="content" @touchstart="start" @touchend="end" >
-    <view id="swip" class="swipper" style="width: 544px; height: 850px;background:blue;" >
-        <video preload='auto' id='my-video'  src='https://media.w3.org/2010/05/sintel/trailer.mp4'  webkit-playsinline='true'
-        playsinline='true' x-webkit-airplay='true' x5-video-player-type='h5' x5-video-player-fullscreen='true'  controls="controls"
-        x5-video-ignore-metadata='true' style="width:544px; height:850px;" >
-            <p>当前视频不支持</p>
-        </video>
+<view class="content">
+    <!--头部导航栏-->
+    <view class="top-banner" style="background-color:grey;height:120px;width:100%;display:flex;flex-direction:row;">
+        <view class="top-banner-item" style="background:red;width:100px;height:80px;margin:20px">
+            <view class="top-banner-item-title" >地区</view>
+            <view class="top-banner-item-content">上海市</view>
+        </view>
+        <view class="top-banner-item" style="background:red;width:100px;height:80px;margin:20px">
+            <view class="top-banner-item-title" >物种</view>
+            <view class="top-banner-item-content">全部</view>
+        </view>
+        <view class="top-banner-item" style="background:red;width:100px;height:80px;margin:20px">
+            <view class="top-banner-item-title" >话题类型</view>
+            <view class="top-banner-item-content">全部</view>
+        </view>
+
+        
 
     </view>
+
+    <!--每个人的动态-->
+        <view class="activate" style="width:100%;height:500px;background-color:green">
+            <view class="activate-user">
+                <view class="activate-user-icon"></view>
+                <view class="activate-user-info">
+                    <view class="activate-user-info-name"></view>
+                    <view class="activate-user-info-time"></view>
+                </view>
+
+            </view>
+            <view class="activate-content">
+
+            </view>
+
+    </view>
+
 
 
 
@@ -32,7 +59,7 @@
 
 
    
-  
+
 
 </view>
 
@@ -42,57 +69,20 @@
 
 <script>
 export default {
-    startx_power:0,
-    starty_power:0,
-    swipper:null,
+    
+    data(){
+
+    },
     onLoad(){
 console.log("create");
     },
     methods:{
+        //在这写功能函数
 
-
-start(e){
-            
-    this.startx_power=e.changedTouches[0].clientX;
-                 
-    this.starty_power=e.changedTouches[0].clientY;
-},
-end(e){
-
-    const subX=e.changedTouches[0].clientX-this.startx_power;
-    const subY=e.changedTouches[0].clientY -this.starty_power;
-    if(subY>50 || subY<-50){
-        console.log('上下滑')
-        this.swipper=document.getElementById("swip")
-        console.log(this.swipper)
-        this.swipper.style.height=0+'px';
-    }else{
-        if(subX>100){
-            console.log('右滑')
-        }else if(subX<-100){
-            console.log('左滑')
-        }else{
-            console.log('无效')
-        }
-    }
-
-    this.startx_power=0;
-    this.starty_power=0;
-},
-
-
-       
-        
         submit(){
             console.log("hello");
             uni.navigateTo({
-                url:"login"
-            })
-        },
-        at_discover(){
-            console.log("discover")
-            uni.navigateTo({
-                url:"discover_index"
+                url:"searchword"
             })
         }
     }
@@ -101,10 +91,18 @@ end(e){
 
 
 <style lang="scss" scoped>
-
-.swipper{
-
+span{
+    font-size: 0.6em;
 }
+  .content{
+      
+      display:flex;
+      flex-direction: column;
+      align-items: center;
+      
+  }
+
+
 
 .bottom-banner{
     display: flex;
@@ -165,3 +163,7 @@ span{
   
 
 </style>
+  
+  
+  
+

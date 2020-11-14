@@ -11,7 +11,7 @@
         </view>
 
         <view class="top-bar-right">
-        <image src="../../static/img/zoom_glasses.jpg"></image>
+        <image src="../../static/img/zoom_glasses.jpg" @click="searchword()"></image>
         </view>
 
     </view>
@@ -164,7 +164,12 @@ onLoad(){
 
 },
 methods:{
-
+          searchword(){
+            console.log("hello");
+            uni.navigateTo({
+                url:"searchword"
+            })
+        }
 }
 }
 

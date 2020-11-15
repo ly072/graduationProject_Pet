@@ -1,167 +1,371 @@
 <template>
-<view  class="content" @touchstart="start" @touchend="end" >
-    <view id="swip" class="swipper" style="width: 544px; height: 850px;background:blue;" >
-        <video preload='auto' id='my-video'  src='https://media.w3.org/2010/05/sintel/trailer.mp4'  webkit-playsinline='true'
-        playsinline='true' x-webkit-airplay='true' x5-video-player-type='h5' x5-video-player-fullscreen='true'  controls="controls"
-        x5-video-ignore-metadata='true' style="width:544px; height:850px;" >
-            <p>当前视频不支持</p>
-        </video>
-
+    <view class="content">
+    <view class="page">
+        <swiper class="swiper" :circular="circular" :vertical="true" @change="onSwiperChange">
+            <swiper-item v-for="item in videoList" :key="item.id">
+                <video class="video" :id="item.id" :ref="item.id" :src="item.src" :controls="false" :loop="true"
+                    :show-center-play-btn="false"></video>
+            </swiper-item>
+        </swiper>
+    </view>
+        <view class="uni-title uni-common-mt">
+        欢迎您使用此软件<br>
+        <text>快来尝试下面的功能吧～</text>
     </view>
 
 
+    <uni-section title="基础图标" type="line">
+			<view class="uni-right">
+				<text class="uni-right-text">显示{{ checked?' unicode':'图标名' }}</text>
+				<switch :checked="checked" class="switch" @change="change" />
+			</view>
+	</uni-section>
+		<view class="example-body">
+			<view v-for="(item,index) in iconClassList" :key="index" class="icon-item" @click="switchActive(index)">
+				<uni-icons :type="item.name" :color="activeIndex === index?'#007aff':'#8f8f94'" size="25" />
+				<text :style="{color:activeIndex === index?'#007aff':'#8f8f94'}" class="icon-item-text">{{ checked? item.unicode: item.name }}</text>
+			</view>
+		</view>
+    </view>
 
-   <view class="bottom-banner">
-       <view class="bottom-banner-item">
-        <img src="../../static/img/logo.jpg" alt="" style="margin:5px 25px;widthd:40px;height:40px">
-        <view style="text-align:center;"><span style="color:white;">宠物视频</span></view>
-       </view>
-        <view class="bottom-banner-item">
-        <img src="../../static/img/logo.jpg" alt="" style="margin:5px 25px;widthd:40px;height:40px" @click="at_discover()">
-        <view style="text-align:center;"><span style="color:white;">发现趣味</span></view>
-       </view>
-        <view class="bottom-banner-item">
-        <img src="../../static/img/logo.jpg" alt="" style="margin:5px 25px;widthd:40px;height:40px" @click="submit()">
-        <view style="text-align:center;"><span style="color:white;">我的消息</span></view>
-       </view>
-        <view class="bottom-banner-item">
-        <img src="../../static/img/logo.jpg" alt="" style="margin:5px 25px;widthd:40px;height:40px" @click="submit()">
-        <view style="text-align:center;"><span style="color:white;">我的空间</span></view>
-       </view>
-   </view>
-
-
-   
-  
-
-</view>
-
-
-
+    
 </template>
-
 <script>
-export default {
-    startx_power:0,
-    starty_power:0,
-    swipper:null,
-    onLoad(){
-console.log("create");
-    },
-    methods:{
-
-
-start(e){
-            
-    this.startx_power=e.changedTouches[0].clientX;
-                 
-    this.starty_power=e.changedTouches[0].clientY;
-},
-end(e){
-
-    const subX=e.changedTouches[0].clientX-this.startx_power;
-    const subY=e.changedTouches[0].clientY -this.starty_power;
-    if(subY>50 || subY<-50){
-        console.log('上下滑')
-        this.swipper=document.getElementById("swip")
-        console.log(this.swipper)
-        this.swipper.style.height=0+'px';
-    }else{
-        if(subX>100){
-            console.log('右滑')
-        }else if(subX<-100){
-            console.log('左滑')
-        }else{
-            console.log('无效')
-        }
-    }
-
-    this.startx_power=0;
-    this.starty_power=0;
-},
-
-
-       
-        
-        submit(){
-            console.log("hello");
-            uni.navigateTo({
-                url:"login"
-            })
+    const videoData = [{
+            src: 'https://img.cdn.aliyun.dcloud.net.cn/guide/uniapp/hellouniapp/hello-nvue-swiper-vertical-01.mp4'
         },
-        at_discover(){
-            console.log("discover")
-            uni.navigateTo({
-                url:"discover_index"
-            })
+        {
+            src: 'https://img.cdn.aliyun.dcloud.net.cn/guide/uniapp/hellouniapp/hello-nvue-swiper-vertical-02.mp4'
+        },
+        {
+            src: 'https://img.cdn.aliyun.dcloud.net.cn/guide/uniapp/hellouniapp/hello-nvue-swiper-vertical-03.mp4'
+        },
+        {
+            src: 'https://img.cdn.aliyun.dcloud.net.cn/guide/uniapp/hellouniapp/hello-nvue-swiper-vertical-01.mp4'
+        },
+        {
+            src: 'https://img.cdn.aliyun.dcloud.net.cn/guide/uniapp/hellouniapp/hello-nvue-swiper-vertical-02.mp4'
+        },
+        {
+            src: 'https://img.cdn.aliyun.dcloud.net.cn/guide/uniapp/hellouniapp/hello-nvue-swiper-vertical-03.mp4'
+        }
+    ];
+
+    export default {
+        data() {
+            return {
+                circular: true,
+                videoList: [{
+                        id: "video0",
+                        src: "",
+                        img: ""
+                    },
+                    {
+                        id: "video1",
+                        src: "",
+                        img: ""
+                    },
+                    {
+                        id: "video2",
+                        src: "",
+                        img: ""
+                    }
+                ],
+                videoDataList: [],
+                iconClassList: [{
+					"name": "arrowdown",
+					"unicode": "e581"
+				}, {
+					"name": "arrowleft",
+					"unicode": "e582"
+				}, {
+					"name": "arrowright",
+					"unicode": "e583"
+				}, {
+					"name": "arrowup",
+					"unicode": "e580"
+				}, {
+					"name": "arrowthindown",
+					"unicode": "e585"
+				}, {
+					"name": "arrowthinleft",
+					"unicode": "e586"
+				}, {
+					"name": "arrowthinright",
+					"unicode": "e587"
+				}, {
+					"name": "arrowthinup",
+					"unicode": "e584"
+				}]
+            }
+        },
+        onLoad(e) {},
+        onReady() {
+            this.init();
+            this.getData();
+        },
+        methods: {
+            init() {
+                this._videoIndex = 0;
+                this._videoContextList = [];
+                for (var i = 0; i < this.videoList.length; i++) {
+                    this._videoContextList.push(uni.createVideoContext('video' + i, this));
+                }
+                this._videoDataIndex = 0;
+            },
+            getData(e) {
+                this.videoDataList = videoData;
+                setTimeout(() => {
+                    this.updateVideo(true);
+                }, 200)
+            },
+            onSwiperChange(e) {
+                let currentIndex = e.detail.current;
+                if (currentIndex === this._videoIndex) {
+                    return;
+                }
+
+                let isNext = false;
+                if (currentIndex === 0 && this._videoIndex === this.videoList.length - 1) {
+                    isNext = true;
+                } else if (currentIndex === this.videoList.length - 1 && this._videoIndex === 0) {
+                    isNext = false;
+                } else if (currentIndex > this._videoIndex) {
+                    isNext = true;
+                }
+
+                if (isNext) {
+                    this._videoDataIndex++;
+                } else {
+                    this._videoDataIndex--;
+                }
+
+                if (this._videoDataIndex < 0) {
+                    this._videoDataIndex = this.videoDataList.length - 1;
+                } else if (this._videoDataIndex >= this.videoDataList.length) {
+                    this._videoDataIndex = 0;
+                }
+
+                this.circular = (this._videoDataIndex != 0);
+
+                if (this._videoIndex >= 0) {
+                    this._videoContextList[this._videoIndex].pause();
+                    this._videoContextList[this._videoIndex].seek(0);
+                }
+
+                this._videoIndex = currentIndex;
+
+                setTimeout(() => {
+                    this.updateVideo(isNext);
+                }, 200);
+            },
+            getNextIndex(isNext) {
+                let index = this._videoIndex + (isNext ? 1 : -1);
+                if (index < 0) {
+                    return this.videoList.length - 1;
+                } else if (index >= this.videoList.length) {
+                    return 0;
+                }
+                return index;
+            },
+            getNextDataIndex(isNext) {
+                let index = this._videoDataIndex + (isNext ? 1 : -1);
+                if (index < 0) {
+                    return this.videoDataList.length - 1;
+                } else if (index >= this.videoDataList.length) {
+                    return 0;
+                }
+                return index;
+            },
+            updateVideo(isNext) {
+                this.$set(this.videoList[this._videoIndex], 'src', this.videoDataList[this._videoDataIndex].src);
+                this.$set(this.videoList[this.getNextIndex(isNext)], 'src', this.videoDataList[this.getNextDataIndex(isNext)].src);
+                setTimeout(() => {
+                    this._videoContextList[this._videoIndex].play();
+                }, 200);
+                console.log("v:" + this._videoIndex + " d:" + this._videoDataIndex + "; next v:" + this.getNextIndex(
+                    isNext) + " next d:" + this.getNextDataIndex(isNext));
+            },
+            change(e) {
+				// e.detail.value在安卓手机上可能是String类型，后续修复后要修改
+				this.checked = e.detail.value === 'false' || !e.detail.value ? false : true
+			},
+			switchActive(index) {
+				this.activeIndex = index
+			}
         }
     }
-}
 </script>
 
-
-<style lang="scss" scoped>
-
-.swipper{
-
-}
-
-.bottom-banner{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    height: 100px;
-    position: absolute;
-    background:black;
-    bottom:0;
-    overflow: hidden;
-}
-
-
-span{
-    font-size: 0.6em;
-}
-  .content{
-      
-      display:flex;
-      flex-direction: column;
-      align-items: center;
-      
-  }
-  .top-bar{
-      height:90rpx;
-      width:100%;
-      box-sizing: border-box;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
-
-      background: #FF0000;
-      border-bottom: grey;
-
-  }
-  .login-title{
-      margin: 50px;
-  }
-  .app-form{
-      height:300px;
-      width:70%;
-    .app-form-user{
-        margin: 50px;
-        border-bottom: thick double #aa0000;
-        
+<style>
+    /* #ifndef APP-PLUS */
+    page {
+        width: 100%;
+        min-height: 100%;
+        display: flex;
     }
-    .app-form-password{
-        margin: 50px;
-        border-bottom: thick double #aa0000
-    }
-    .app-form-loginbtn{
-        margin: 50px;
-    }
-  }
-  
+    /* #endif */
 
+    .page {
+        flex: 1;
+        width: 750rpx;
+    }
+
+    .swiper {
+        flex: 1;
+        background-color: #007AFF;
+    }
+
+    .swiper-item {
+        flex: 1;
+    }
+
+    .video {
+        flex: 1;
+        /* #ifndef APP-PLUS */
+        width: 100%;
+        /* #endif */
+    }
+
+    /* 头条小程序组件内不能引入字体 */
+	/* #ifdef MP-TOUTIAO */
+	@font-face {
+		font-family: uniicons;
+		font-weight: normal;
+		font-style: normal;
+		src: url('~@/static/uni.ttf') format('truetype');
+	}
+
+	/* #endif */
+
+	/* #ifndef APP-NVUE */
+	page {
+		display: flex;
+		flex-direction: column;
+		box-sizing: border-box;
+		background-color: #efeff4;
+		min-height: 100%;
+		height: auto;
+	}
+
+	view {
+		font-size: 14px;
+		line-height: inherit;
+	}
+
+	.example {
+		padding: 0 15px 15px;
+	}
+
+	.example-info {
+		padding: 15px;
+		color: #3b4144;
+		background: #ffffff;
+	}
+
+	.example-body {
+		/* #ifndef APP-NVUE */
+		display: flex;
+		/* #endif */
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: center;
+		padding: 0;
+		font-size: 14px;
+		background-color: #ffffff;
+	}
+
+	/* #endif */
+	.example {
+		padding: 0 15px;
+	}
+
+	.example-info {
+		/* #ifndef APP-NVUE */
+		display: block;
+		/* #endif */
+		padding: 15px;
+		color: #3b4144;
+		background-color: #ffffff;
+		font-size: 14px;
+		line-height: 20px;
+	}
+
+	.example-info-text {
+		font-size: 14px;
+		line-height: 20px;
+		color: #3b4144;
+	}
+
+
+	.example-body {
+		flex-direction: column;
+		padding: 15px;
+		background-color: #ffffff;
+	}
+
+	.word-btn-white {
+		font-size: 18px;
+		color: #FFFFFF;
+	}
+
+	.word-btn {
+		/* #ifndef APP-NVUE */
+		display: flex;
+		/* #endif */
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+		border-radius: 6px;
+		height: 48px;
+		margin: 15px;
+		background-color: #007AFF;
+	}
+
+	.word-btn--hover {
+		background-color: #4ca2ff;
+	}
+
+
+	.example-body {
+		padding: 0;
+		flex-direction: row;
+		flex-wrap: wrap;
+		/* align-items: center;
+ */
+		/* justify-content: center;
+ */
+	}
+
+	.uni-right {
+		flex-direction: row;
+		flex-wrap: nowrap;
+		align-items: center;
+		color: #666;
+	}
+
+	.uni-right-text {
+		font-size: 28rpx;
+	}
+
+	.switch {
+		transform: scale(0.8);
+		margin-left: 5px;
+	}
+
+	.icon-item {
+		/* #ifndef APP-NVUE */
+		display: flex;
+		box-sizing: border-box;
+		/* #endif */
+		width: 180rpx;
+		padding: 30rpx 10rpx;
+		text-align: center;
+		flex-direction: column;
+	}
+
+	.icon-item-text {
+		font-size: 24rpx;
+		text-align: center;
+	}
 </style>

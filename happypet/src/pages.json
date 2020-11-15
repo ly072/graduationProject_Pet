@@ -4,19 +4,7 @@
 		{
 			"path": "pages/index/welcome",
 			"style": {
-				"navigationBarTitleText": "首页",
-				"navigationStyle":"custom",
-				"app-plus": {
-					"bounce": "vertical",
-					"titleNView": {
-						"buttons": [{
-							"text": "\ue534",
-							"fontSrc": "/static/uni.ttf",
-							"fontSize": "22px",
-							"color": "#FFFFFF"
-						}]
-					}
-				}
+				"navigationBarTitleText": "首页"
 			}
 		},
 		{
@@ -74,9 +62,27 @@
 			}
 		},
 		{
-			"path": "pages/index/index",
+			"path": "pages/index/chat_index",
 			"style": {
 				"navigationBarTitleText": "毕业设计聊天页",
+				"navigationStyle":"custom",
+				"app-plus": {
+					"bounce": "vertical",
+					"titleNView": {
+						"buttons": [{
+							"text": "\ue534",
+							"fontSrc": "/static/uni.ttf",
+							"fontSize": "22px",
+							"color": "#FFFFFF"
+						}]
+					}
+				}
+			}
+		},
+		{
+			"path": "pages/index/mine_index",
+			"style": {
+				"navigationBarTitleText": "我的",
 				"navigationStyle":"custom",
 				"app-plus": {
 					"bounce": "vertical",
@@ -1244,13 +1250,15 @@
 			]
 		}
 	],
+	
+	
 	"globalStyle": {
 		// #ifdef MP-360
 		"navigationStyle": "custom",
 		// #endif
 		"pageOrientation": "portrait",
 		"navigationBarTextStyle": "white",
-		"navigationBarTitleText": "Hello uniapp",
+		"navigationBarTitleText": "uniapp",
 		"navigationBarBackgroundColor": "#007AFF",
 		"backgroundColor": "#F8F8F8",
 		"backgroundColorTop": "#F4F5F6",
@@ -1265,12 +1273,35 @@
 		"borderStyle": "black",
 		"backgroundColor": "#F8F8F8",
 		"list": [{
+			"pagePath": "pages/index/welcome",
+			"iconPath": "static/component.png",
+			"selectedIconPath": "static/componentHL.png",
+			"text": "宠物视频"
+			},
+			{
+				"pagePath": "pages/index/discover_index",
+				"iconPath": "static/component.png",
+				"selectedIconPath": "static/componentHL.png",
+				"text": "发现乐趣"
+			},
+			{
+				"pagePath": "pages/index/chat_index",
+				"iconPath": "static/component.png",
+				"selectedIconPath": "static/componentHL.png",
+				"text": "个人信息"
+			},
+			{
+				"pagePath": "pages/index/mine_index",
+				"iconPath": "static/component.png",
+				"selectedIconPath": "static/componentHL.png",
+				"text": "我的"
+			},
+			{
 				"pagePath": "pages/tabBar/component/component",
 				"iconPath": "static/component.png",
 				"selectedIconPath": "static/componentHL.png",
 				"text": "内置组件"
-			},
-			{
+			}, {
 				"pagePath": "pages/tabBar/API/API",
 				"iconPath": "static/api.png",
 				"selectedIconPath": "static/apiHL.png",

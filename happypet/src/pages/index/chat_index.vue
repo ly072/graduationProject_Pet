@@ -15,29 +15,10 @@
         </view>
 
     </view>
+  
 
     <view class="friends">
-      <view class="friend-list">
-
-        <view class="friend-list-l">
-            <text class="tip"></text>
-              <view class="user-image">
-              <image src="../../static/img/user_list_icon.jpg"></image>
-              </view>
-       
-        </view>
-        <view class="friend-list-r">
-          <view class="friend-list-top">
-            <view class="friend-list-top-left">好友请求</view>
-            <view class="friend-list-top-right">11:34</view>
-          </view>
-
-          <view class="friend-list-bottom">在么？</view>
-        </view>
-
-        
-      </view>
-      
+    
 
       <view class="friend-list">
 
@@ -60,92 +41,11 @@
         
       </view>
 
-      <view class="friend-list">
 
-        <view class="friend-list-l">
-            <text class="tip"></text>
-              <view class="user-image">
-              <image src="../../static/img/user_list_icon.jpg"></image>
-              </view>
-       
-        </view>
-        <view class="friend-list-r">
-          <view class="friend-list-top">
-            <view class="friend-list-top-left">好友请求</view>
-            <view class="friend-list-top-right">11:34</view>
-          </view>
 
-          <view class="friend-list-bottom">在么？</view>
-        </view>
 
-        
-      </view>
-
-      <view class="friend-list">
-
-        <view class="friend-list-l">
-            <text class="tip"></text>
-              <view class="user-image">
-              <image src="../../static/img/user_list_icon.jpg"></image>
-              </view>
-       
-        </view>
-        <view class="friend-list-r">
-          <view class="friend-list-top">
-            <view class="friend-list-top-left">好友请求</view>
-            <view class="friend-list-top-right">11:34</view>
-          </view>
-
-          <view class="friend-list-bottom">在么？</view>
-        </view>
-
-        
-      </view>
-
-      <view class="friend-list">
-
-        <view class="friend-list-l">
-            <text class="tip"></text>
-              <view class="user-image">
-              <image src="../../static/img/user_list_icon.jpg"></image>
-              </view>
-       
-        </view>
-        <view class="friend-list-r">
-          <view class="friend-list-top">
-            <view class="friend-list-top-left">好友请求</view>
-            <view class="friend-list-top-right">11:34</view>
-          </view>
-
-          <view class="friend-list-bottom">在么？</view>
-        </view>
-        <span class=""></span>
-
-        
-      </view>
-
-      <view class="friend-list">
-
-        <view class="friend-list-l">
-            <text class="tip"></text>
-              <view class="user-image">
-              <image src="../../static/img/user_list_icon.jpg"></image>
-              </view>
-       
-        </view>
-        <view class="friend-list-r">
-          <view class="friend-list-top">
-            <view class="friend-list-top-left">好友请求</view>
-            <view class="friend-list-top-right">11:34</view>
-          </view>
-
-          <view class="friend-list-bottom">在么？</view>
-        </view>
-
-        
-      </view>
-    </view>
   </view>
+</view>
     
     
     

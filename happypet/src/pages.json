@@ -1,6 +1,7 @@
 {
 	"pages": [
 		// pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+
 		{
 			"path": "pages/index/welcome",
 			"style": {
@@ -11,6 +12,24 @@
 			"path": "pages/index/login",
 			"style": {
 				"navigationBarTitleText": "请先登陆",
+				"navigationStyle":"custom",
+				"app-plus": {
+					"bounce": "vertical",
+					"titleNView": {
+						"buttons": [{
+							"text": "\ue534",
+							"fontSrc": "/static/uni.ttf",
+							"fontSize": "22px",
+							"color": "#FFFFFF"
+						}]
+					}
+				}
+			}
+		},
+		{
+			"path": "pages/index/news",
+			"style": {
+				"navigationBarTitleText": "新闻界面",
 				"navigationStyle":"custom",
 				"app-plus": {
 					"bounce": "vertical",

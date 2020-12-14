@@ -20,12 +20,17 @@
 				<switch :checked="checked" class="switch" @change="change" />
 			</view>
 	</uni-section>
-		<view class="example-body">
+		<view class="example-body" v-show="0">
 			<view v-for="(item,index) in iconClassList" :key="index" class="icon-item" @click="switchActive(index)">
 				<uni-icons :type="item.name" :color="activeIndex === index?'#007aff':'#8f8f94'" size="25" />
 				<text :style="{color:activeIndex === index?'#007aff':'#8f8f94'}" class="icon-item-text">{{ checked? item.unicode: item.name }}</text>
 			</view>
 		</view>
+
+            <view style="width:100px;height:100px;background-color:#181818;color:white" v-on:click="hello">
+                <text>新闻动态</text>
+            </view>
+
     </view>
 
     
@@ -118,6 +123,12 @@
                 setTimeout(() => {
                     this.updateVideo(true);
                 }, 200)
+            },
+            hello: function(){
+                console.log("hello")
+                            uni.navigateTo({
+                url:"news"
+            })
             },
             onSwiperChange(e) {
                 let currentIndex = e.detail.current;

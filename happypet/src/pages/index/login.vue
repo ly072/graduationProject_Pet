@@ -38,6 +38,7 @@
 export default {
     
     data(){
+        return{one:1}
 
     },
     onLoad(){
@@ -45,9 +46,10 @@ console.log("create");
     },
     methods:{
         submit(){
-            console.log("hello");
+            console.log("hello"),
             uni.navigateTo({
-                url:"index"
+                url:'news'
+                //如果底部的banner是在的,算作同一个页面
             })
         }
     }

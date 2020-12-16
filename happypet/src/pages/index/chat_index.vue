@@ -1,6 +1,6 @@
 <template>
-  <view class="content">
-    <view class="top-bar">
+  <view class="content" style="background:white">
+    <view class="top-bar" style="margin-top:70px">
         <view class="top-bar-left">
         <image src="../../static/img/user_icon.jpg"></image>
         </view>
@@ -20,26 +20,6 @@
     <view class="friends">
     
 
-      <view class="friend-list">
-
-        <view class="friend-list-l">
-            <text class="tip"></text>
-              <view class="user-image">
-              <image src="../../static/img/user_list_icon.jpg"></image>
-              </view>
-       
-        </view>
-        <view class="friend-list-r">
-          <view class="friend-list-top">
-            <view class="friend-list-top-left">好友请求</view>
-            <view class="friend-list-top-right">11:34</view>
-          </view>
-
-          <view class="friend-list-bottom">在么？</view>
-        </view>
-
-        
-      </view>
 
 
 
@@ -56,82 +36,34 @@
 		</view>
 
 
-    		<scroll-view class="chatList" scroll-y="true">
+    		<scroll-view class="chatList" scroll-y="true" style="margin-bottom:50px">
 			<!-- <view class="chat_item" v-for="item in userArr" :key="item.nickname" @touchstart="navChatDetail(item.id , item.nickname)"> -->
-        <view class="chat_item">
-				<view class="useravatar">
-					<image src="../../static/img/user_list_icon.jpg" mode="scaleToFill"></image>
-					<view class="img_bage">
-					</view>
-				</view>
-				<view class="userInfo">
-					<view class="infocontent">
-						<view class="userName">
-							小王
+
+
+			<view class="uni-list">
+					<view class="uni-list-cell" hover-class="uni-list-cell-hover" v-for="(item,index) in news" :key="index"
+					@tap="openinfo" :data-newsid="item.post_id">
+						<view class="uni-media-list">
+							<image class="uni-media-list-logo" :src="item.author_avatar">
+									<view class="img_bage" style="position:absolute;z-index:2;left:0;margin-left:50px"></view>
+							</image>
+
+							<view class="uni-media-list-body" @click="openinfo">
+								<view class="uni-media-list-text-top">{{item.title}}</view>
+								<view class="uni-media-list-text-bottom uni-ellipsis">{{item.content}}</view>
+							</view>
 						</view>
-						<view class="userChat">哈哈哈</view>
-
-
-					</view>
-					<view class="userDate" >
-						2018年
-					</view>
-
-
-				</view>
-
-			</view>
-
-              <view class="chat_item">
-				<view class="useravatar">
-					<image src="../../static/img/user_list_icon.jpg" mode="scaleToFill"></image>
-					<view class="img_bage">
 					</view>
 				</view>
-				<view class="userInfo">
-					<view class="infocontent">
-						<view class="userName">
-							小王
-						</view>
-						<view class="userChat">哈哈哈</view>
+		
 
 
-					</view>
-					<view class="userDate" >
-						2018年
-					</view>
 
 
-				</view>
-
-			</view>
-
-              <view class="chat_item">
-				<view class="useravatar">
-					<image src="../../static/img/user_list_icon.jpg" mode="scaleToFill"></image>
-					<view class="img_bage">
-					</view>
-				</view>
-				<view class="userInfo">
-					<view class="infocontent">
-						<view class="userName">
-							小li
-						</view>
-						<view class="userChat">哈哈哈</view>
-
-
-					</view>
-					<view class="userDate" >
-						2018年
-					</view>
-
-
-				</view>
-
-			</view>
+					<!-- <view class="img_bage"> -->
 
 		</scroll-view>
-</view>
+	</view>
     
     
     
@@ -143,30 +75,77 @@
 export default {
     data(){
         return{
-            title:'Hello'
+				title:'',
+				strings:'',
+				news:[]
         }
     },
-onLoad(){
+	
 
-},
+	onLoad:function(e){		
+		
+						uni.showLoading({
+				title: '加载中...',  //数据加载转转圈圈操作
+			});
+           uni.request({   //数据请求
+           	url: 'https://unidemo.dcloud.net.cn/api/news',
+           	method: 'GET',
+           	data: {},
+           	success: res => {
+				console.log(res);
+				this.news=res.data;
+				uni.hideLoading(); // 关闭转圈圈操作
+			},
+           	fail: () => {},
+           	complete: () => {}
+           });	
+
+	},
+
 methods:{
-          searchword(){
-            console.log("hello");
-            uni.navigateTo({
-                url:"searchword"
-            })
-        }
+				searchword(){
+					console.log("hello");
+					uni.navigateTo({
+						url:"searchword"
+					})
+				},
+				openinfo: function(e){
+						
+						console.log("cool")
+						var newsid = e.currentTarget.dataset.newsid;   //数据id
+						console.log(newsid)
+						uni.navigateTo({  //跳转页面
+							url: 'login'   //url加id
+						});
+					}
+		}
 }
-}
+
 
 </script>
 
 <style lang="scss" scope>
 
+	.uni-media-list-body{
+		height: auto;
+	}
+	.uni-media-list-text-top{
+		line-height: 1.6em;
+	}
+
+	.img_bage {
+	position: absolute;
+	width: 20rpx;
+	height: 20rpx;
+	background-color: red;
+	border-radius: 50%;
+	top: 10rpx;
+	right: 10rpx;
+}
+
 //new add
 
 	.chatList {
-		margin-top: 110upx;
 		overflow: hidden;
 		width: 100%;
 		/*  #ifdef H5 || MP */
@@ -186,15 +165,7 @@ methods:{
 				height: 100%;
 				float: left;
 				position: relative;
-				.img_bage {
-					position: absolute;
-					width: 20rpx;
-					height: 20rpx;
-					background-color: red;
-					border-radius: 50%;
-					top: 10rpx;
-					right: 10rpx;
-				}
+
 				image {
 					width: 128upx;
 					height: 128upx;

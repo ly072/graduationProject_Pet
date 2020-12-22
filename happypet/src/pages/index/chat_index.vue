@@ -115,7 +115,7 @@ methods:{
 						var newsid = e.currentTarget.dataset.newsid;   //数据id
 						console.log(newsid)
 						uni.navigateTo({  //跳转页面
-							url: 'login'   //url加id
+							url: 'chat_personal'   //url加id
 						});
 					}
 		}

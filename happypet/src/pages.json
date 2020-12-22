@@ -9,6 +9,12 @@
 			}
 		},
 		{
+			"path": "pages/index/chat_personal",
+			"style": {
+				"navigationBarTitleText": "对话详情页面"
+			}
+		},
+		{
 			"path": "pages/index/login",
 			"style": {
 				"navigationBarTitleText": "请先登陆",

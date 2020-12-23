@@ -20,56 +20,52 @@
     </view>
 
 
+	<view class="personal-interest" style="width:100%;height:500px;">
+		<view class="interest-banner" style="height:80px;display:flex
+		;flex-direction:row">
+			<view class="interest-head-icon" style="width:50%">
 
-    	<view class="friend">
-		<!-- 基本展示 -->
-		<view class="show" v-for="(item,index) in reviewList" :key="index">
-			<image class="friend-left" :src="item.avatar" mode=""></image>
-			<view class="friend-right">
-				<view class="title">{{item.nick_name}}</view>
-				<view class="content">
-					{{item.content}}
-				</view>
-				<!-- 图片 -->
-				<view class="image">
-					<image v-for="(i,n) in item.image" :key="n" :src="i" mode=""></image>
-					<view v-if="item.image.length<9"></view>
-				</view>
-				<!-- 评论 -->
-				<view class="discuss">
-					<!-- 笔芯 -->
-					<view class="heart-people">
-						<view class="heart" v-for="(i,index) in item.give_like" :key="index">
-							<image :src="item.heart_active" mode=""></image>
-							<text>{{i.nick_name}}</text>
-						</view>
-					</view>
-					<!-- 笔芯和评论 -->
-					<view class="buzan">
-						<!-- 笔芯 -->
-						<image :src="item.heart_active" mode="" v-if="heartList" @click="showHeart(1)"></image>
-						<image :src="item.heart" mode="" v-else @click="showHeart(2)"></image>
-						<!-- 评论 -->
-						<image :src="item.message" mode="" class="message" @click="inputShow(2)"></image>
-					</view>
-					<!-- 交谈 -->
-					<view class="talk">
-						<view class="talk-set" v-for="(i,n) in item.comment" :key="n" @click="nickName(i.user_name[0].nick_name)">
-							<text class="title">{{i.user_name[0].nick_name}}</text>
-							<text v-if="i.user_name.length==2">回复</text>
-							<text v-if="i.user_name.length==2" class="title">{{i.user_name[1].nick_name}}</text>：{{i.content}}
-						</view>
-					</view>
-				</view>
+				<image src="http://img.aiimg.com/uploads/userup/0909/2Z64022L38.jpg" style="width:60px;height:60px;margin:10px;border-radius:90px"></image>
+			</view>
+			<view class="interest-user-info"  style="width:100%;display:flex;
+			flex-direction:column">
+				<view class="interest-user-title" style="height:100%;">是我呀</view>
+				<view class="interest-user-name" style="height:100%;">2020年9月20日</view>
+			</view>
+			<view class="interest-user-operator" style="width:50%">
+				<image src="http://img.aiimg.com/uploads/userup/0909/2Z64022L38.jpg" style="width:60px;height:60px;margin:10px;"></image>
 			</view>
 		</view>
-		<!-- 输入框  紧跟键盘 -->
-		<view class="input" :style="'bottom:'+height+'px'" v-if="textarea">
-			<textarea @keyboardheightchange="keyboardheightchange" v-model="input" :focus="true" :placeholder="placeholder"
-			 :fixed="true" :show-confirm-bar="false" :adjust-position="false" :cursor-spacing="15" />
-			<button type="default" @click="inputShow(1)">完成</button>
+		<view class="interest-text">这个是我和狗狗的故事
+		</view>
+		<view class="interest-image-container">
+			<image src="http://img.aiimg.com/uploads/userup/0909/2Z64022L38.jpg" style="width:100px;height:100px;margin:10px;"></image>
+			<image src="http://img.aiimg.com/uploads/userup/0909/2Z64022L38.jpg" style="width:100px;height:100px;margin:10px;"></image>
+		</view>
+
+		<view class="thumb-container" style="height:100px;background-color:grey"></view>
+				<view class="interest-comment" style="height:80px;display:flex
+		;flex-direction:row">
+			<view class="interest-head-icon" style="width:50%">
+
+				<image src="http://img.aiimg.com/uploads/userup/0909/2Z64022L38.jpg" style="width:60px;height:60px;margin:10px;border-radius:90px"></image>
+			</view>
+			<view class="interest-user-info"  style="width:100%;display:flex;
+			flex-direction:column">
+				<view class="interest-user-title" style="height:100%;">是我呀</view>
+				<view class="interest-user-name" style="height:100%;">2020年9月20日</view>
+			</view>
+
 		</view>
 	</view>
+
+
+
+	</view>
+
+
+
+
 
 
 

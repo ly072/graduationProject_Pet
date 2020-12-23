@@ -1,9 +1,9 @@
 <template>
     <view class="bgConston">
         <view class="userSession" style="1000px">
-            <view class="userH">
+            <view class="userH" v-for="item in 5">
                 <view class="userImg">
-                    <image src="" mode="scaleToFill"></image>
+                    <image src="../../static/logo.png" mode="scaleToFill"></image>
                 </view>
                 <view class="userType">
                     <view class="userN">
@@ -38,12 +38,183 @@
 				abosultPaht: "../../"
 			}
 		},
+		userContextItem:[{
+			userId:1,
+			meId:"",
+			userName:"纵横天下",
+			userImg:"../static/nan.png",
+			type:"text",
+			context:"你好，请问有什么可以帮助你的么？",
+			time:new Date().getTime()
+		}],
+		onLoad(){
+			uni.getSystemInfo({
+				success:(res)=>{
+					let height=res.windowHeight -uni.upx2px(100);
+					//this.sHeight=height;
+				}
+			})
+		},
 		props: ['message', 'id'],
 		computed: mapState(['user'])
 	}
 </script>
 
 <style>
+
+	.bgConston{
+		width:100%;
+		height:100%;
+		background-color: #F8F8F8 ;
+		margin:0;
+		padding:0;
+	}
+	.userSession{
+		width:100%;
+		height:atuo;
+		border-top: 1upx solid #EDEDED;
+		overflow: auto;
+	}
+
+	.userH{
+		width:80%;
+		height:auto;
+		display:flex;
+		flex:1;
+		flex-wrap:wrap;
+		padding:20px;
+	}
+	.userMe{
+		width:95%;
+		height:auto;
+		display:flex;
+		flex:1;
+		flex-wrap:wrap;
+		padding:20px;
+		justify-content:flex-start;
+		flex-direction:row-reverse;
+		text-align:right;
+
+	}
+
+	.userImg{
+		width:70upx;
+		height:70upx;
+		display:flex;
+		justify-content:center;
+		align-items:center;
+
+
+	}
+	.userImg>image{
+		width:65upx;
+		height:65upx;
+		border-radius:100%;
+	}
+	.userType{
+		display:flex;
+		justify-content: center;
+		flex-direction: column;
+		padding:10upx;
+
+	}
+	.userN{
+		height:50upx;
+		display:flex;
+		justify-content: space-around;
+	}
+	.userN>text{
+		height:50upx;
+		min-height:100upx;
+		color:#666;
+	}
+	.textType{
+		max-width:400upx;
+		background-color:#FFFFFF;
+		border-radius:10upx;
+		box-shadow: 3upx 3upx 3upx 3upx #E3E3E3;
+	}
+	.textType>text{
+		font-size:28upx;
+		color:#666;
+	}
+	.imgType{
+		max-width: 300upx;
+		max-height: 420upx;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-color:#ffffff;
+		border-radius: 20upx;
+		box-shadow: 3upx 3upx 3upx 3upx #E3E3E3;
+		display:flex;
+		align-items:center;
+		justify-content:center;
+
+	}
+
+	.imgType>image{
+		width:250upx;
+		height:350upx;
+		padding:20upx;
+
+	}
+
+
+	.videoType{
+		width:300upx;
+		height:400upx;
+		display:flex;
+		justify-content: center;
+		align-items: center;
+		background-color:#ffffff ;
+		border-radius: 20upx;
+		box-shadow: 3upx 3upx 3upx 3upx #e3e3e3;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.videoType>video{
+		width:270upx;
+		height:370upx;
+	}
+
+	.userInput{
+		height:100upx;
+		position:fixed;
+		bottom:0;
+		left:0;
+		right:0;
+		padding:0 10px;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		box-shadow: 0 0 5upx 0 #e3e3e3;
+	}
+
+	.userInput>input{
+		height:50upx;
+		background:#f4f5f6;
+		border-radius:15upx;
+		padding: 10upx 10upx;
+		flex:1;
+		margin-right: 20upx;
+		font-size: 28upx;
+	}
+	.userInput>view{
+		width:120upx;
+		font-size:24upx;
+		color:#ffffff;
+		height:60upx;
+		background-color:#e80080;
+		border: radius 20upx;
+		text-align: center;
+		line-height:60upx;
+	}
+
+
+
 	.m-item {
 		display: flex;
 		flex-direction: row;

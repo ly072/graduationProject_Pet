@@ -1,29 +1,51 @@
 <template>
     <view class="bgConston">
         <view class="userSession" style="1000px">
-            <view class="userH" v-for="item in 5">
+			<view v-for="(item,index) in chat_info">
+
+            <view class="userH"  v-show="chat_info[index].user_chat == 0">
                 <view class="userImg">
                     <image src="../../static/logo.png" mode="scaleToFill"></image>
                 </view>
                 <view class="userType">
                     <view class="userN">
-                        <text>昵称</text>
-                        <text>2020-5-20</text>
+                        <text>{{chat_info[index].nichen}}</text>
+                        <text>{{chat_info[index].date}}</text>
                     </view>
-                    <view class="textType">
-                        <text>你好，欢迎订购最新的产品</text>
+                    <view class="textType">	
+                        <text>{{chat_info[index].content}}</text>
                     </view>
 
 
                 </view>
             </view>
 
+			<view class="userH" v-show="chat_info[index].user_chat == 1" style="flex-direction:row-reverse;">
+				<view class="userImg">
+                    <image src="../../static/logo.png" mode="scaleToFill"></image>
+                </view>
+                <view class="userType">
+                    <view class="userN">
+                        <text>你</text>
+                        <text>{{chat_info[index].date}}</text>
+                    </view>
+                    <view class="textType">
+                        <text>{{chat_info[index].content}}</text>
+                    </view>
+
+
+                </view>
+ </view>
+
+            </view>
+
 
         </view>
+		<view style="height:100px"></view>
 
         <view class="userInput">
-            <input type="text" placeholder="文明发言">
-            <view class="sumText" @tap="submit(text)">发送</view>
+            <input type="text" placeholder="文明发言" @input="onKeyInput">
+            <view class="sumText" @click="submit()">发送</view>
         </view>
     </view>
 </template>
@@ -35,7 +57,28 @@
 	export default {
 		data() {
 			return {
-				abosultPaht: "../../"
+				abosultPaht: "../../",
+				
+				input_value:"哈哈哈",
+				chat_info:[
+					{
+						"user_chat":"0",
+						"nichen":"小红",
+						"date":"2020-5-20",
+						"content":"你好，欢迎订购最新的产品"
+
+						
+					},
+										{
+						"user_chat":"1",
+						"nichen":"小黄",
+						"date":"2020-5-20",
+						"content":"你好，欢迎订购最新的产品"
+
+						
+					}
+				]
+				
 			}
 		},
 		userContextItem:[{
@@ -55,6 +98,30 @@
 				}
 			})
 		},
+		methods:{
+
+
+			onKeyInput: function(event) {
+                this.input_value= event.detail.value
+            },
+			
+			submit: function(){
+				console.log('yellow')
+
+				var arr  =
+				{
+									"user_chat":"1",
+									"nichen":"你",
+									"date":"2020-5-20",
+									"content":this.input_value
+				}
+
+				this.chat_info.push(arr);
+				this.input_value="";
+
+			}
+		},
+
 		props: ['message', 'id'],
 		computed: mapState(['user'])
 	}

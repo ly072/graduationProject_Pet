@@ -39,7 +39,7 @@
 		</view>
 
 
-    		<scroll-view class="chatList" scroll-y="true" style="margin-bottom:50px">
+    	<scroll-view class="chatList" scroll-y="true" style="margin-bottom:50px">
 			<!-- <view class="chat_item" v-for="item in userArr" :key="item.nickname" @touchstart="navChatDetail(item.id , item.nickname)"> -->
 
 
@@ -54,6 +54,7 @@
 							<view class="uni-media-list-body" @click="openinfo">
 								<view class="uni-media-list-text-top">{{item.title}}</view>
 								<view class="uni-media-list-text-bottom uni-ellipsis">{{item.content}}</view>
+								<view class="uni-date" style="position:absolute;z-index:2;right:0;margin-right:50px">{{item.published_at}}</view>
 							</view>
 						</view>
 					</view>
@@ -80,28 +81,92 @@ export default {
         return{
 				title:'',
 				strings:'',
-				news:[]
+				news:[
+  {
+    "id": 121375,
+    "from_id": "36kr",
+    "title": "小白",
+    "summary": "没有永远的敌人，只有永远的利益。",
+    "column_id": "223",
+    "column_name": "内容",
+    "author_name": "未来汽车日报",
+    "author_email": "",
+    "author_avatar": "https://pic.36krcnd.com/avatar/201907/16100441/yd25e764o4bt93t9!120",
+    "post_id": "5310910",
+    "cover": "https://img.36krcdn.com/20200410/v2_9c3331af67e64994aa97a27fffb1a380_img_png?x-oss-process=image/resize,m_mfit,w_520,h_300/crop,w_520,h_300,g_center",
+    "content": "在么？好久不见",
+    "views_count": 0,
+    "comments_count": 0,
+    "published_at": "2020-04-11 17:07:48",
+    "store_at": "0000-00-00 00:00:00",
+    "type": "news",
+    "created_at": "2020-04-11 17:11:09",
+    "updated_at": "2020-04-11 17:11:09"
+  },
+    {
+    "id": 121376,
+    "from_id": "36kr",
+    "title": "小黄",
+    "summary": "没有永远的敌人，只有永远的利益。",
+    "column_id": "223",
+    "column_name": "内容",
+    "author_name": "未来汽车日报",
+    "author_email": "",
+    "author_avatar": "https://pic.36krcnd.com/avatar/201907/16100441/yd25e764o4bt93t9!120",
+    "post_id": "5310910",
+    "cover": "https://img.36krcdn.com/20200410/v2_9c3331af67e64994aa97a27fffb1a380_img_png?x-oss-process=image/resize,m_mfit,w_520,h_300/crop,w_520,h_300,g_center",
+    "content": "在么？好久不见",
+    "views_count": 0,
+    "comments_count": 0,
+    "published_at": "2020-04-11 17:07:48",
+    "store_at": "0000-00-00 00:00:00",
+    "type": "news",
+    "created_at": "2020-04-11 17:11:09",
+    "updated_at": "2020-04-11 17:11:09"
+  },
+    {
+    "id": 121377,
+    "from_id": "36kr",
+    "title": "小绿",
+    "summary": "没有永远的敌人，只有永远的利益。",
+    "column_id": "223",
+    "column_name": "内容",
+    "author_name": "未来汽车日报",
+    "author_email": "",
+    "author_avatar": "https://pic.36krcnd.com/avatar/201907/16100441/yd25e764o4bt93t9!120",
+    "post_id": "5310910",
+    "cover": "https://img.36krcdn.com/20200410/v2_9c3331af67e64994aa97a27fffb1a380_img_png?x-oss-process=image/resize,m_mfit,w_520,h_300/crop,w_520,h_300,g_center",
+    "content": "在么？好久不见",
+    "views_count": 0,
+    "comments_count": 0,
+    "published_at": "2020-04-11 17:07:48",
+    "store_at": "0000-00-00 00:00:00",
+    "type": "news",
+    "created_at": "2020-04-11 17:11:09",
+    "updated_at": "2020-04-11 17:11:09"
+  }
+]
         }
     },
 	
 
 	onLoad:function(e){		
 		
-						uni.showLoading({
-				title: '加载中...',  //数据加载转转圈圈操作
-			});
-           uni.request({   //数据请求
-           	url: 'https://unidemo.dcloud.net.cn/api/news',
-           	method: 'GET',
-           	data: {},
-           	success: res => {
-				console.log(res);
-				this.news=res.data;
-				uni.hideLoading(); // 关闭转圈圈操作
-			},
-           	fail: () => {},
-           	complete: () => {}
-           });	
+		// 				uni.showLoading({
+		// 		title: '加载中...',  //数据加载转转圈圈操作
+		// 	});
+        //    uni.request({   //数据请求
+        //    	url: 'https://unidemo.dcloud.net.cn/api/news',
+        //    	method: 'GET',
+        //    	data: {},
+        //    	success: res => {
+		// 		console.log(res.data);
+		// 		this.news=res.data;
+		// 		uni.hideLoading(); // 关闭转圈圈操作
+		// 	},
+        //    	fail: () => {},
+        //    	complete: () => {}
+        //    });	
 
 	},
 

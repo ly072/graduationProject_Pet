@@ -110,7 +110,12 @@
                 <view class="uni-list-cell" hover-class="uni-list-cell-hover" v-for="(item3,index3) in listPersonalInfo" :key="index3">
                     <view class="uni-list-cell-navigate uni-navigate-right">
                         {{item3}}
-                    </view>
+
+                        <view class="name" style="margin-right:20%;color:grey">
+                            {{item_person_info[index3]}}
+                        </view>
+                    </view>  
+
                 </view>
             </view>
 
@@ -161,6 +166,7 @@ return {
      list:["我收到的","我关注的","随便看看","我的动态"],
      listPersonalInfo: ['昵称','签名','地区','性别','退出登陆'],
     imgUrl:"",
+    item_person_info:["马老师","小伙子不讲武德","未填写","男"],
 
 
     
@@ -235,7 +241,7 @@ methods: {
 
             getList() {
                 uni.request({
-                    url: 'http://localhost:3000/data3', 
+                    url: 'http://localhost:3000/func/jifen', 
                     success: (res) => {
                         console.log(res.data);
                          this.jifen =res.data;

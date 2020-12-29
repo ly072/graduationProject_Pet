@@ -2,16 +2,19 @@
   <view class="content" style="background:white">
     <view class="top-bar" style="margin-top:70px">
         <view class="top-bar-left">
-        <image src="../../static/img/user_icon.jpg"></image>
+        <image src="../../static/logo.png" style="margin:20px;width:40px;height:40px;border-radius: 50%;"></image> 
         </view>
 
         <view class="top-bar-center">
 
-        <image src="../../static/img/logo.jpg"></image>
+        <image src="../../static/img/logo.jpg" style="margin:0px 20px;width:30px;height:30px;border-radius: 50%;"></image>
+
+		<view style="font-style:italic;font-weight:800"><text >一个不一样的宠物平台～</text></view>
+		</image>
         </view>
 
         <view class="top-bar-right">
-        <image src="../../static/img/zoom_glasses.jpg" @click="searchword()"></image>
+        <image src="../../static/img/zoom_glasses.jpg"  style="margin-right:20px;width:60px;height:60px;border-radius: 50%;" @click="searchword()"></image>
         </view>
 
     </view>

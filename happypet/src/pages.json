@@ -8,6 +8,13 @@
 				"navigationBarTitleText": "首页"
 			}
 		},
+
+		{
+			"path": "pages/index/swiper-vertical",
+			"style": {
+				"navigationBarTitleText": "视频页"
+			}
+		},
 		{
 			"path": "pages/index/chat_personal",
 			"style": {

@@ -20,48 +20,134 @@
     </view>
 
 
-	<view class="personal-interest" style="width:100%;height:500px;">
+	<view class="personal-interest" style="width:100%;height:100%;">
 		<view class="interest-banner" style="height:80px;display:flex
 		;flex-direction:row">
 			<view class="interest-head-icon" style="width:50%">
 
-				<image src="http://img.aiimg.com/uploads/userup/0909/2Z64022L38.jpg" style="width:60px;height:60px;margin:10px;border-radius:90px"></image>
+				<image src="../../static/img/user_icon.jpg" style="width:60px;height:60px;margin:10px;border-radius:90px"></image>
 			</view>
 			<view class="interest-user-info"  style="width:100%;display:flex;
 			flex-direction:column">
 				<view class="interest-user-title" style="height:100%;">是我呀</view>
 				<view class="interest-user-name" style="height:100%;">2020年9月20日</view>
 			</view>
-			<view class="interest-user-operator" style="width:50%">
-				<image src="http://img.aiimg.com/uploads/userup/0909/2Z64022L38.jpg" style="width:60px;height:60px;margin:10px;"></image>
-			</view>
 		</view>
-		<view class="interest-text">这个是我和狗狗的故事
-		</view>
+		<view class="interest-text">这个是我和狗狗的故事</view>
 		<view class="interest-image-container">
 			<image src="http://img.aiimg.com/uploads/userup/0909/2Z64022L38.jpg" style="width:100px;height:100px;margin:10px;"></image>
 			<image src="http://img.aiimg.com/uploads/userup/0909/2Z64022L38.jpg" style="width:100px;height:100px;margin:10px;"></image>
 		</view>
 
-		<view class="thumb-container" style="height:100px;background-color:grey"></view>
-				<view class="interest-comment" style="height:80px;display:flex
+		<view class="thumb-container" style="height:100px;background-color:pink">
+			<view class="interest-comment" style="height:80px;display:flex
+			;flex-direction:row">
+				<view class="interest-head-icon" style="width:50%">
+
+					<image src="../../static/shuijiao.jpg" style="width:60px;height:60px;margin:10px;border-radius:90px"></image>
+				</view>
+				<view class="interest-user-info"  style="width:100%;display:flex;
+				flex-direction:column">
+					<view class="interest-user-title" style="height:100%;"><text style="color:grey">评论：</text>好可爱呀！</view>
+					<view class="interest-user-name" style="height:100%;">2020年9月20日</view>
+				</view>
+
+			</view>
+		</view>
+
+
+		<view style="margin:40px 0px;width:100%;height:10px;border-bottom:2px grey solid"></view>
+
+	</view>
+
+
+
+
+
+	<view class="personal-interest" style="width:100%;height:100%;">
+		<view class="interest-banner" style="height:80px;display:flex
 		;flex-direction:row">
 			<view class="interest-head-icon" style="width:50%">
 
-				<image src="http://img.aiimg.com/uploads/userup/0909/2Z64022L38.jpg" style="width:60px;height:60px;margin:10px;border-radius:90px"></image>
+				<image src="../../static/img/user_icon.jpg" style="width:60px;height:60px;margin:10px;border-radius:90px"></image>
 			</view>
 			<view class="interest-user-info"  style="width:100%;display:flex;
 			flex-direction:column">
 				<view class="interest-user-title" style="height:100%;">是我呀</view>
 				<view class="interest-user-name" style="height:100%;">2020年9月20日</view>
 			</view>
-
 		</view>
+		<view class="interest-text">这个是我和狗狗的故事</view>
+		<view class="interest-image-container">
+			<image src="http://img.aiimg.com/uploads/userup/0909/2Z64022L38.jpg" style="width:100px;height:100px;margin:10px;"></image>
+			<image src="http://img.aiimg.com/uploads/userup/0909/2Z64022L38.jpg" style="width:100px;height:100px;margin:10px;"></image>
+		</view>
+
+		<view class="thumb-container" style="height:100px;background-color:pink">
+			<view class="interest-comment" style="height:80px;display:flex
+			;flex-direction:row">
+				<view class="interest-head-icon" style="width:50%">
+
+					<image src="../../static/shuijiao.jpg" style="width:60px;height:60px;margin:10px;border-radius:90px"></image>
+				</view>
+				<view class="interest-user-info"  style="width:100%;display:flex;
+				flex-direction:column">
+					<view class="interest-user-title" style="height:100%;"><text style="color:grey">评论：</text>好可爱呀！</view>
+					<view class="interest-user-name" style="height:100%;">2020年9月20日</view>
+				</view>
+
+			</view>
+		</view>
+
+
+		<view style="margin:40px 0px;width:100%;height:10px;border-bottom:2px grey solid"></view>
+
 	</view>
 
 
 
+
+
+	<view class="personal-interest" style="width:100%;height:100%;">
+		<view class="interest-banner" style="height:80px;display:flex
+		;flex-direction:row">
+			<view class="interest-head-icon" style="width:50%">
+
+				<image src="../../static/img/user_icon.jpg" style="width:60px;height:60px;margin:10px;border-radius:90px"></image>
+			</view>
+			<view class="interest-user-info"  style="width:100%;display:flex;
+			flex-direction:column">
+				<view class="interest-user-title" style="height:100%;">是我呀</view>
+				<view class="interest-user-name" style="height:100%;">2020年9月20日</view>
+			</view>
+		</view>
+		<view class="interest-text">这个是我和狗狗的故事</view>
+		<view class="interest-image-container">
+			<image src="http://img.aiimg.com/uploads/userup/0909/2Z64022L38.jpg" style="width:100px;height:100px;margin:10px;"></image>
+			<image src="http://img.aiimg.com/uploads/userup/0909/2Z64022L38.jpg" style="width:100px;height:100px;margin:10px;"></image>
+		</view>
+
+		<view class="thumb-container" style="height:100px;background-color:pink">
+			<view class="interest-comment" style="height:80px;display:flex
+			;flex-direction:row">
+				<view class="interest-head-icon" style="width:50%">
+
+					<image src="../../static/shuijiao.jpg" style="width:60px;height:60px;margin:10px;border-radius:90px"></image>
+				</view>
+				<view class="interest-user-info"  style="width:100%;display:flex;
+				flex-direction:column">
+					<view class="interest-user-title" style="height:100%;"><text style="color:grey">评论：</text>好可爱呀！</view>
+					<view class="interest-user-name" style="height:100%;">2020年9月20日</view>
+				</view>
+
+			</view>
+		</view>
+
+
+		<view style="margin:40px 0px;width:100%;height:10px;border-bottom:2px grey solid"></view>
+
 	</view>
+
 
 
 

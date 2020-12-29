@@ -1,35 +1,79 @@
 <template>
     <view class="content">
     <view class="page">
-        <swiper class="swiper" :circular="circular" :vertical="true" @change="onSwiperChange">
+        <!-- <swiper class="swiper" :circular="circular" :vertical="true" @change="onSwiperChange">
             <swiper-item v-for="item in videoList" :key="item.id">
                 <video class="video" :id="item.id" :ref="item.id" :src="item.src" :controls="false" :loop="true"
                     :show-center-play-btn="false"></video>
             </swiper-item>
-        </swiper>
+        </swiper> -->
     </view>
         <view class="uni-title uni-common-mt">
         欢迎您使用此软件<br>
         <text>快来尝试下面的功能吧～</text>
     </view>
 
+<view class="swiper" style="background:white">
+        <swiper :interval="1000" :duration="1000" :indicator-dots="true"
+     :current="topSwiperIndex" @change="topSwiperTab">
+        <swiper-item v-for="(item,index) in topSwiper" :key="index">
+            <view class="swiper-item">
+                <image :src="item.src" mode="aspectFill" style="margin:20px"></image>
+            </view>
+        </swiper-item>
+    </swiper>
 
-    <uni-section title="基础图标" type="line">
-			<view class="uni-right">
-				<text class="uni-right-text">显示{{ checked?' unicode':'图标名' }}</text>
-				<switch :checked="checked" class="switch" @change="change" />
-			</view>
-	</uni-section>
+        <!-- 自定义指示点dots -->
+    <view class="dots">
+        <text>{{topSwiperIndex+1}}/{{topSwiper.length}}</text>
+    </view>
+    </view>
+
+
+
 		<view class="example-body" v-show="0">
 			<view v-for="(item,index) in iconClassList" :key="index" class="icon-item" @click="switchActive(index)">
 				<uni-icons :type="item.name" :color="activeIndex === index?'#007aff':'#8f8f94'" size="25" />
 				<text :style="{color:activeIndex === index?'#007aff':'#8f8f94'}" class="icon-item-text">{{ checked? item.unicode: item.name }}</text>
 			</view>
 		</view>
+        <view style="display:flex;flex-direction:row">
 
-            <view style="width:100px;height:100px;background-color:#181818;color:white" v-on:click="hello">
+            <view style="margin:10px 10px;width:70px;height:70px;background-color:#227799;color:white;border-radius:20px;display:flex;align-items:center;justify-content:center" v-on:click="hello">
                 <text>新闻动态</text>
             </view>
+
+            <view style="width:70px;margin:10px 10px;height:70px;background-color:#992277;color:white;border-radius:20px;display:flex;align-items:center;justify-content:center" v-on:click="hello_video">
+                <text>宠物视频</text>
+            </view>
+
+            <view style="width:70px;margin:10px 10px;height:70px;background-color:#992277;color:white;border-radius:20px;display:flex;align-items:center;justify-content:center" v-on:click="hello_video">
+                <text>宠物视频</text>
+            </view>
+
+            <view style="width:70px;margin:10px 10px;height:70px;background-color:#992277;color:white;border-radius:20px;display:flex;align-items:center;justify-content:center" v-on:click="hello_video">
+                <text>宠物视频</text>
+            </view>
+        </view>
+
+                <view style="display:flex;flex-direction:row">
+
+            <view style="margin:10px 10px;width:70px;height:70px;background-color:#227799;color:white;border-radius:20px;display:flex;align-items:center;justify-content:center" v-on:click="hello">
+                <text>新闻动态</text>
+            </view>
+
+            <view style="width:70px;margin:10px 10px;height:70px;background-color:#992277;color:white;border-radius:20px;display:flex;align-items:center;justify-content:center" v-on:click="hello_video">
+                <text>宠物视频</text>
+            </view>
+
+            <view style="width:70px;margin:10px 10px;height:70px;background-color:#992277;color:white;border-radius:20px;display:flex;align-items:center;justify-content:center" v-on:click="hello_video">
+                <text>宠物视频</text>
+            </view>
+
+            <view style="width:70px;margin:10px 10px;height:70px;background-color:#992277;color:white;border-radius:20px;display:flex;align-items:center;justify-content:center" v-on:click="hello_video">
+                <text>宠物视频</text>
+            </view>
+        </view>
 
     </view>
 
@@ -59,6 +103,25 @@
     export default {
         data() {
             return {
+
+                   topSwiperIndex: 0,
+        topSwiper: [
+            {
+                src: require('../../static/pet1.jpeg')
+            },
+            {
+                src: require('../../static/pet2.jpeg')
+            },
+            {
+                src: require('../../static/pet3.jpeg')
+            },
+            {
+                src: require('../../static/pet2.jpeg')
+            },
+            {
+                src: require('../../static/pet1.jpeg')
+            }
+        ] ,
                 circular: true,
                 videoList: [{
                         id: "video0",
@@ -110,6 +173,11 @@
             this.getData();
         },
         methods: {
+
+               topSwiperTab(e) {
+        var that = this;
+        this.topSwiperIndex = Number(e.target.current);
+    },
             init() {
                 this._videoIndex = 0;
                 this._videoContextList = [];
@@ -128,6 +196,13 @@
                 console.log("hello")
                             uni.navigateTo({
                 url:"news"
+            })
+            },
+
+            hello_video: function(){
+                console.log("hello")
+                            uni.navigateTo({
+                url:"swiper-vertical"
             })
             },
             onSwiperChange(e) {
@@ -256,7 +331,7 @@
 		box-sizing: border-box;
 		background-color: #efeff4;
 		min-height: 100%;
-		height: auto;
+		height: 200rpx;
 	}
 
 	view {

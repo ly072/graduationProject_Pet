@@ -3,11 +3,18 @@
 
 
 <view>     
-        <view class="mine-picture-text">我的头像</view>
+        <view class="mine-picture-text" style="margin:50upx;font-size:20px">我的头像</view>
 
-        <view class="chooseImg" @tap="openChooseImg" style="width:40px;height:40px;border-radius: 50%;">
-        <text v-if="!imgUrl">+</text>
+        <view class="chooseImg" @tap="openChooseImg" style="margin:0px 50px;width:40px;height:40px;border-radius: 50%;">
+        <text v-if="!imgUrl">
+            <image src="../../static/logo.png" style="width:40px;height:40px;border-radius: 50%;"></image> 
+        </text>
         <image v-else :src="imgUrl" style="width:40px;height:40px;border-radius: 50%;"></image> 
+        </view>
+
+
+        <view class="jifen" style="margin:0px 50px;width:100%;height:100%;font-size:20px">
+            我的积分：{{jifen}}
         </view>
 
 <!--顶部导航栏-->
@@ -36,13 +43,13 @@
 
 <!--内容区-->
 
-<view class="uni-tab-bar" style="height:300px">
+<view class="uni-tab-bar" style="height:500px">
 
-<swiper :current="tabIndex" @change="tabChange" style="height:300px">
+<swiper :current="tabIndex" @change="tabChange" style="height:500px">
 
 <swiper-item v-for="(content,index) in contentList" :key="index"  >
 
-    <view  style="height:1000px;width:100%" v-if="tabIndex===2">
+    <view  style="height:1200px;width:100%" v-if="tabIndex===2">
                 <view class="uni-list">
                     系统设置
                     <view class="uni-list-cell" hover-class="uni-list-cell-hover" >
@@ -80,7 +87,7 @@
                 
     </view>
 
-    <view  style="height:200px;width:200px;" v-if="tabIndex===1">
+    <view  style="height:200px;width:100%" v-if="tabIndex===1">
                 <view class="uni-list">
                     我的消息
                     <view class="uni-list-cell" hover-class="uni-list-cell-hover" v-for="(item2,index2) in list" :key="index2">
@@ -90,16 +97,26 @@
                     </view>
                 </view>
     </view>
+    
 
-    <view  style="height:100%;width:80%" v-if="tabIndex===0">
+    <view  style="height:100%;width:100%" v-if="tabIndex===0">
+            <uni-section title="个人信息" type="line">
+			<view class="uni-right">
+				<text class="uni-right-text">{{ checked?' unicode':'黑夜模式' }}</text>
+				<switch :checked="checked" class="switch" @change="change" />
+			</view>
+	</uni-section>
             <view class="uni-list" style="height:120%;width:100%" >
-                个人信息
                 <view class="uni-list-cell" hover-class="uni-list-cell-hover" v-for="(item3,index3) in listPersonalInfo" :key="index3">
                     <view class="uni-list-cell-navigate uni-navigate-right">
                         {{item3}}
                     </view>
                 </view>
             </view>
+
+            
+
+            
     </view>
 
 
@@ -116,9 +133,7 @@
 
 </view>
 
-<view class="jifen" style="width:100%;height:200px;font-size:20px">
-    我的积分：{{jifen}}
-</view>
+
 
 
 </view>
@@ -143,7 +158,7 @@ data() {
 return {
 
     jifen:0,
-     list:[1,2,3,4],
+     list:["我收到的","我关注的","随便看看","我的动态"],
      listPersonalInfo: ['昵称','签名','地区','性别','退出登陆'],
     imgUrl:"",
 
@@ -158,7 +173,7 @@ contentList: [
 
 "积分：0",
 "敬请期待",
-"4"
+"退出登录"
 
 
 
@@ -191,7 +206,7 @@ id: 'setting'
 },
 {
 
-name: '4',
+name: '退出登录',
 
 id: 'four'
 

@@ -44,8 +44,8 @@
 		<view style="height:100px"></view>
 
         <view class="userInput">
-            <input type="text" placeholder="文明发言" @input="onKeyInput">
-            <view class="sumText" @click="submit()">发送</view>
+            <input type="text" placeholder="文明发言" :value="input_value" @input="onKeyInput" >
+            <view class="sumText" @click="submit(e)">发送</view>
         </view>
     </view>
 </template>
@@ -105,7 +105,7 @@
                 this.input_value= event.detail.value
             },
 			
-			submit: function(){
+			submit: function(e){
 				console.log('yellow')
 
 				var arr  =
@@ -118,6 +118,10 @@
 
 				this.chat_info.push(arr);
 				this.input_value="";
+
+				
+				
+				
 
 			}
 		},

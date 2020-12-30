@@ -31,12 +31,12 @@
 
 
 
-		<view class="example-body" v-show="0">
+		<!-- <view class="example-body" v-show="0">
 			<view v-for="(item,index) in iconClassList" :key="index" class="icon-item" @click="switchActive(index)">
 				<uni-icons :type="item.name" :color="activeIndex === index?'#007aff':'#8f8f94'" size="25" />
 				<text :style="{color:activeIndex === index?'#007aff':'#8f8f94'}" class="icon-item-text">{{ checked? item.unicode: item.name }}</text>
 			</view>
-		</view>
+		</view> -->
         <view style="display:flex;flex-direction:row">
 
             <view style="margin:10px 10px;width:70px;height:70px;background-color:#227799;color:white;border-radius:20px;display:flex;align-items:center;justify-content:center" v-on:click="hello">
@@ -47,31 +47,31 @@
                 <text>宠物视频</text>
             </view>
 
-            <view style="width:70px;margin:10px 10px;height:70px;background-color:#992277;color:white;border-radius:20px;display:flex;align-items:center;justify-content:center" v-on:click="hello_video">
-                <text>宠物视频</text>
+            <view style="width:70px;margin:10px 10px;height:70px;background-color:green;color:white;border-radius:20px;display:flex;align-items:center;justify-content:center" v-on:click="hello_video">
+                <text>宠物商城</text>
             </view>
 
-            <view style="width:70px;margin:10px 10px;height:70px;background-color:#992277;color:white;border-radius:20px;display:flex;align-items:center;justify-content:center" v-on:click="hello_video">
-                <text>宠物视频</text>
+            <view style="width:70px;margin:10px 10px;height:70px;background-color:blue;color:white;border-radius:20px;display:flex;align-items:center;justify-content:center" v-on:click="hello_video">
+                <text>商业合作</text>
             </view>
         </view>
 
                 <view style="display:flex;flex-direction:row">
 
-            <view style="margin:10px 10px;width:70px;height:70px;background-color:#227799;color:white;border-radius:20px;display:flex;align-items:center;justify-content:center" v-on:click="hello">
-                <text>新闻动态</text>
+            <view style="margin:10px 10px;width:70px;height:70px;background-color:#22AA99;color:white;border-radius:20px;display:flex;align-items:center;justify-content:center" v-on:click="hello">
+                <text>关于我们</text>
             </view>
 
-            <view style="width:70px;margin:10px 10px;height:70px;background-color:#992277;color:white;border-radius:20px;display:flex;align-items:center;justify-content:center" v-on:click="hello_video">
-                <text>宠物视频</text>
+            <view style="width:70px;margin:10px 10px;height:70px;background-color:#CC2277;color:white;border-radius:20px;display:flex;align-items:center;justify-content:center" v-on:click="hello_video">
+                <text>分享我们</text>
             </view>
 
-            <view style="width:70px;margin:10px 10px;height:70px;background-color:#992277;color:white;border-radius:20px;display:flex;align-items:center;justify-content:center" v-on:click="hello_video">
-                <text>宠物视频</text>
+            <view style="width:70px;margin:10px 10px;height:70px;background-color:red;color:white;border-radius:20px;display:flex;align-items:center;justify-content:center" v-on:click="hello_video">
+                <text>宠物活动</text>
             </view>
 
-            <view style="width:70px;margin:10px 10px;height:70px;background-color:#992277;color:white;border-radius:20px;display:flex;align-items:center;justify-content:center" v-on:click="hello_video">
-                <text>宠物视频</text>
+            <view style="width:70px;margin:10px 10px;height:70px;background-color:#992211;color:white;border-radius:20px;display:flex;align-items:center;justify-content:center" v-on:click="hello_video">
+                <text>攻略详情</text>
             </view>
         </view>
 

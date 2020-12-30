@@ -1,6 +1,14 @@
 <template>
   <view class="content" style="background:white">
-    <view class="top-bar" style="margin-top:70px">
+
+    		<view class="header">
+			  <text>宠物社区兴趣平台</text>
+        <view class="header_right">
+          <view class="iconfont icon-sousuo"></view>
+          <view class="iconfont icon-tianjia"></view>
+        </view>
+		</view>
+    <view class="top-bar" style="margin-top:130upx">
         <view class="top-bar-left">
         <image src="../../static/logo.png" style="margin:20px;width:40px;height:40px;border-radius: 50%;"></image> 
         </view>
@@ -30,13 +38,7 @@
   </view>
 
   		<view class="status_bar bgc" style=""></view>
-		<view class="header">
-			<text>微信(77)</text>
-			<view class="header_right">
-				<view class="iconfont icon-sousuo"></view>
-				<view class="iconfont icon-tianjia"></view>
-			</view>
-		</view>
+
 
 
     	<scroll-view class="chatList" scroll-y="true" style="margin-bottom:50px">
@@ -51,7 +53,7 @@
 									<view class="img_bage" style="position:absolute;z-index:2;left:0;margin-left:50px"></view>
 							</image>
 
-							<view class="uni-media-list-body" @click="openinfo">
+							<view class="uni-media-list-body" >
 								<view class="uni-media-list-text-top">{{item.title}}</view>
 								<view class="uni-media-list-text-bottom uni-ellipsis">{{item.content}}</view>
 								<view class="uni-date" style="position:absolute;z-index:2;right:0;margin-right:50px">{{item.published_at}}</view>
@@ -178,10 +180,6 @@ methods:{
 					})
 				},
 				openinfo: function(e){
-						
-						console.log("cool")
-						var newsid = e.currentTarget.dataset.newsid;   //数据id
-						console.log(newsid)
 						uni.navigateTo({  //跳转页面
 							url: 'chat_personal'   //url加id
 						});

@@ -35,11 +35,11 @@
 		</view>
 		<view class="interest-text">这个是我和狗狗的故事</view>
 		<view class="interest-image-container">
-			<image src="http://img.aiimg.com/uploads/userup/0909/2Z64022L38.jpg" style="width:100px;height:100px;margin:10px;"></image>
-			<image src="http://img.aiimg.com/uploads/userup/0909/2Z64022L38.jpg" style="width:100px;height:100px;margin:10px;"></image>
+			<image src="../../static/pet1.jpeg" style="width:100px;height:100px;margin:10px;"></image>
+			<image src="../../static/pet2.jpeg" style="width:100px;height:100px;margin:10px;"></image>
 		</view>
 
-		<view class="thumb-container" style="height:100px;background-color:pink">
+		<view class="thumb-container" style="height:100px;background-color:#FFFAFA">
 			<view class="interest-comment" style="height:80px;display:flex
 			;flex-direction:row">
 				<view class="interest-head-icon" style="width:50%">
@@ -50,6 +50,23 @@
 				flex-direction:column">
 					<view class="interest-user-title" style="height:100%;"><text style="color:grey">评论：</text>好可爱呀！</view>
 					<view class="interest-user-name" style="height:100%;">2020年9月20日</view>
+				</view>
+
+			</view>
+		</view>
+		<view style="margin:10px 0px;width:100%;height:5px;border-bottom:1px #FFFAFA solid"></view>
+
+		<view class="thumb-container" style="height:200px;background-color:#FFFAFA">
+			<view class="interest-comment" style="height:80px;display:flex
+			;flex-direction:column">
+				<view class="interest-head-icon" style="width:50%">
+
+					<image src="../../static/shuijiao.jpg" style="width:60px;height:60px;margin:10px;border-radius:90px"></image>
+				</view>
+				<view class="interest-user-info"  style="width:100%;display:flex;
+				flex-direction:row">
+					<view class="interest-user-title" style="height:50%;"><text style="color:grey">请评论：</text><input class="comment-input" placeholder="文明发言"></view>
+					<button style="width:200upx;height:50%;margin:20px 20px"class="mini-btn" type="primary" size="mini">发送</button>
 				</view>
 
 			</view>

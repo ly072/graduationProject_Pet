@@ -49,34 +49,34 @@
 
 <swiper-item v-for="(content,index) in contentList" :key="index"  >
 
-    <view  style="height:1200px;width:100%" v-if="tabIndex===2">
-                <view class="uni-list">
+    <view  style="height:1200px;width:100%" v-if="tabIndex===2" >
+                <view class="uni-list" >
                     系统设置
-                    <view class="uni-list-cell" hover-class="uni-list-cell-hover" >
+                    <view class="uni-list-cell" hover-class="uni-list-cell-hover"   @click="openinfo">
                         <view class="uni-list-cell-navigate uni-navigate-right">
                             {{listPersonalInfo[0]}}
                         </view>
                     </view>
 
-                                        <view class="uni-list-cell" hover-class="uni-list-cell-hover" >
+                                        <view class="uni-list-cell" hover-class="uni-list-cell-hover"@click="openinfo" >
                         <view class="uni-list-cell-navigate uni-navigate-right">
                             {{listPersonalInfo[1]}}
                         </view>
                     </view>
 
-                                        <view class="uni-list-cell" hover-class="uni-list-cell-hover" >
+                                        <view class="uni-list-cell" hover-class="uni-list-cell-hover" @click="openinfo">
                         <view class="uni-list-cell-navigate uni-navigate-right">
                             {{listPersonalInfo[2]}}
                         </view>
                     </view>
 
-                                        <view class="uni-list-cell" hover-class="uni-list-cell-hover" >
+                                        <view class="uni-list-cell" hover-class="uni-list-cell-hover" @click="openinfo">
                         <view class="uni-list-cell-navigate uni-navigate-right">
                             {{listPersonalInfo[3]}}
                         </view>
                     </view>
 
-                                                            <view class="uni-list-cell" hover-class="uni-list-cell-hover" >
+                                                            <view class="uni-list-cell" hover-class="uni-list-cell-hover" @click="openinfo">
                         <view class="uni-list-cell-navigate uni-navigate-right">
                             {{listPersonalInfo[4]}}
                         </view>
@@ -91,7 +91,7 @@
                 <view class="uni-list">
                     我的消息
                     <view class="uni-list-cell" hover-class="uni-list-cell-hover" v-for="(item2,index2) in list" :key="index2">
-                        <view class="uni-list-cell-navigate uni-navigate-right">
+                        <view class="uni-list-cell-navigate uni-navigate-right" @click="openinfo">
                             {{item2}}
                         </view>
                     </view>
@@ -102,12 +102,12 @@
     <view  style="height:100%;width:100%" v-if="tabIndex===0">
             <uni-section title="个人信息" type="line">
 			<view class="uni-right">
-				<text class="uni-right-text">{{ checked?' unicode':'黑夜模式' }}</text>
-				<switch :checked="checked" class="switch" @change="change" />
+				<text class="uni-right-text">黑夜模式</text>
+				<switch  class="switch" @change="change" />
 			</view>
 	</uni-section>
             <view class="uni-list" style="height:120%;width:100%" >
-                <view class="uni-list-cell" hover-class="uni-list-cell-hover" v-for="(item3,index3) in listPersonalInfo" :key="index3">
+                <view class="uni-list-cell" hover-class="uni-list-cell-hover" v-for="(item3,index3) in listPersonalInfo" :key="index3" @click="openinfo">
                     <view class="uni-list-cell-navigate uni-navigate-right">
                         {{item3}}
 
@@ -163,6 +163,7 @@ data() {
 return {
 
     jifen:0,
+    user_login:0,
      list:["我收到的","我关注的","随便看看","我的动态"],
      listPersonalInfo: ['昵称','签名','地区','性别','退出登陆'],
     imgUrl:"",
@@ -176,7 +177,6 @@ tabIndex: 0, //选中标签栏的序列
 contentList: [
 
 "您当前暂未发布视频哦",
-
 "积分：0",
 "敬请期待",
 "退出登录"
@@ -237,6 +237,15 @@ onLoad() {
 },
 
 methods: {
+
+
+                openinfo(e){	
+                    console.log('hello')			
+				uni.navigateTo({  //跳转页面
+                    url: 'login'
+                    
+				});
+			},
 
 
             getList() {

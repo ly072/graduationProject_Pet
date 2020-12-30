@@ -444,22 +444,22 @@
 			}
 		},
 		onLoad:function() {  //生命周期只执行一次
-			uni.showLoading({
-				title: '加载中...',  //数据加载转转圈圈操作
-			});
-           uni.request({   //数据请求
-           	url: 'https://unidemo.dcloud.net.cn/api/news',
-           	method: 'GET',
-           	data: {},
-           	success: res => {
-				console.log(res);
-				this.news=res.data;
-				uni.hideLoading(); // 关闭转圈圈操作
-			},
-           	fail: () => {},
-           	complete: () => {}
-           });		   
-		},
+		// 	uni.showLoading({
+		// 		title: '加载中...',  //数据加载转转圈圈操作
+		// 	});
+    //        uni.request({   //数据请求
+    //        	url: 'https://unidemo.dcloud.net.cn/api/news',
+    //        	method: 'GET',
+    //        	data: {},
+    //        	success: res => {
+		// 		console.log(res);
+		// 		this.news=res.data;
+		// 		uni.hideLoading(); // 关闭转圈圈操作
+		// 	},
+    //        	fail: () => {},
+    //        	complete: () => {}
+    //        });		   
+		 },
 		methods: {   //方法
             openinfo(e){				
 				var newsid = e.currentTarget.dataset.newsid;   //数据id

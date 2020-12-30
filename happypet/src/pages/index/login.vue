@@ -47,9 +47,24 @@ console.log("create");
     methods:{
         submit(){
             console.log("hello"),
-            uni.navigateTo({
-                url:'news'
-                //如果底部的banner是在的,算作同一个页面
+            uni.navigateBack({
+
+            success: () => {
+
+                let page = getCurrentPages().pop();  //跳转页面成功之后
+
+                if (!page) return;
+
+                let options = {
+
+                user_login:1  
+
+                }
+
+                
+
+            }
+
             })
         }
     }

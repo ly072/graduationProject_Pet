@@ -1,9 +1,9 @@
 <template>
-    <view class="page">
-        <swiper class="swiper" :circular="circular" :vertical="true" @change="onSwiperChange">
-            <swiper-item v-for="item in videoList" :key="item.id">
+    <view class="page" style="width:100%;height:100%">
+        <swiper class="swiper" :circular="circular" :vertical="true" @change="onSwiperChange" style="width:100%;height:100%">
+            <swiper-item v-for="item in videoList" :key="item.id" style="width:100%;height:100%">
                 <video class="video" :id="item.id" :ref="item.id" :src="item.src" :controls="false" :loop="true"
-                    :show-center-play-btn="false"></video>
+                    :show-center-play-btn="false" style="width:100%;height:100%"></video>
             </swiper-item>
         </swiper>
     </view>

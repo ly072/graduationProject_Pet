@@ -43,9 +43,9 @@
 
 <!--内容区-->
 
-<view class="uni-tab-bar" style="height:500px">
+<view class="uni-tab-bar" style="height:400px">
 
-<swiper :current="tabIndex" @change="tabChange" style="height:500px">
+<swiper :current="tabIndex" @change="tabChange" style="height:400px">
 
 <swiper-item v-for="(content,index) in contentList" :key="index"  >
 
@@ -115,7 +115,6 @@
                             {{item_person_info[index3]}}
                         </view>
                     </view>  
-
                 </view>
             </view>
 
@@ -133,10 +132,14 @@
 
 </swiper>
 
-
+<view class="quit-cointainer" style="height:100px;width:100%;display:flex;flex-direction:row;justify-content:center;align-content:center">
+    <view class="quit" style="height:50px;width:80%;border-radius:20px;background-color:yellow;text-align:center;line-height:50px">退出登陆</view>
+</view>
 
 
 </view>
+
+
 
 
 

@@ -8,10 +8,14 @@
             </swiper-item>
         </swiper> -->
     </view>
-        <view class="uni-title uni-common-mt">
-        欢迎您使用此软件<br>
-        <text>快来尝试下面的功能吧～</text>
-    </view>
+        <view class="uni-title uni-common-mt" style="display:inline-block">
+            <ul style="width:100%">
+                <li>推荐</li>
+                <li>最新</li>
+                <li>视频</li>
+                <li>本地</li>
+            </ul>
+        </view>
 
 <view class="swiper" style="background:white">
         <swiper :interval="1000" :duration="1000" :indicator-dots="true"
@@ -47,31 +51,31 @@
                 <text>宠物视频</text>
             </view>
 
-            <view style="width:70px;margin:10px 10px;height:70px;background-color:green;color:white;border-radius:20px;display:flex;align-items:center;justify-content:center" v-on:click="hello_video">
+            <view style="width:70px;margin:10px 10px;height:70px;background-color:green;color:white;border-radius:20px;display:flex;align-items:center;justify-content:center" v-on:click="hello_shop">
                 <text>宠物商城</text>
             </view>
 
-            <view style="width:70px;margin:10px 10px;height:70px;background-color:blue;color:white;border-radius:20px;display:flex;align-items:center;justify-content:center" v-on:click="hello_video">
-                <text>商业合作</text>
+            <view style="width:70px;margin:10px 10px;height:70px;background-color:blue;color:white;border-radius:20px;display:flex;align-items:center;justify-content:center" v-on:click="hello_mission">
+                <text>每日任务</text>
             </view>
         </view>
 
                 <view style="display:flex;flex-direction:row">
 
-            <view style="margin:10px 10px;width:70px;height:70px;background-color:#22AA99;color:white;border-radius:20px;display:flex;align-items:center;justify-content:center" v-on:click="hello">
-                <text>关于我们</text>
+            <view style="margin:10px 10px;width:70px;height:70px;background-color:#22AA99;color:white;border-radius:20px;display:flex;align-items:center;justify-content:center" v-on:click="hello_knowledge">
+                <text>宠物知识</text>
             </view>
 
-            <view style="width:70px;margin:10px 10px;height:70px;background-color:#CC2277;color:white;border-radius:20px;display:flex;align-items:center;justify-content:center" v-on:click="hello_video">
+            <view style="width:70px;margin:10px 10px;height:70px;background-color:#CC2277;color:white;border-radius:20px;display:flex;align-items:center;justify-content:center" v-on:click="hello_shareus">
                 <text>分享我们</text>
             </view>
 
-            <view style="width:70px;margin:10px 10px;height:70px;background-color:red;color:white;border-radius:20px;display:flex;align-items:center;justify-content:center" v-on:click="hello_video">
-                <text>宠物活动</text>
+            <view style="width:70px;margin:10px 10px;height:70px;background-color:red;color:white;border-radius:20px;display:flex;align-items:center;justify-content:center" v-on:click="hello_cut">
+                <text>寻找优惠</text>
             </view>
 
-            <view style="width:70px;margin:10px 10px;height:70px;background-color:#992211;color:white;border-radius:20px;display:flex;align-items:center;justify-content:center" v-on:click="hello_video">
-                <text>攻略详情</text>
+            <view style="width:70px;margin:10px 10px;height:70px;background-color:#992211;color:white;border-radius:20px;display:flex;align-items:center;justify-content:center" v-on:click="hello_play">
+                <text>轻松一下</text>
             </view>
         </view>
 
@@ -203,6 +207,42 @@
                 console.log("hello")
                             uni.navigateTo({
                 url:"swiper-vertical"
+            })
+            },
+            hello_shop: function(){
+                console.log("hello")
+                            uni.navigateTo({
+                url:"petshop_index"
+            })
+            },
+            hello_mission: function(){
+                console.log("hello")
+                            uni.navigateTo({
+                url:"daily_mission"
+            })
+            },
+            hello_knowledge: function(){
+                console.log("hello")
+                            uni.navigateTo({
+                url:"pet_knowledge"
+            })
+            },
+            hello_shareus: function(){
+                console.log("hello")
+                            uni.navigateTo({
+                url:"shareus"
+            })
+            },
+            hello_cut: function(){
+                console.log("hello")
+                            uni.navigateTo({
+                url:"find_cut"
+            })
+            },
+            hello_play: function(){
+                console.log("hello")
+                            uni.navigateTo({
+                url:"play_index"
             })
             },
             onSwiperChange(e) {
@@ -454,4 +494,13 @@
 		font-size: 24rpx;
 		text-align: center;
 	}
+
+    .uni-title ul{
+        list-style: none;
+    }
+
+    .uni-title li{
+        float:left;
+        margin-left:20px;
+    }
 </style>

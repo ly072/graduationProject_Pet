@@ -21,8 +21,7 @@
 
 
 	<view class="personal-interest" style="width:100%;height:100%;" v-for="item in 3">
-		<view class="interest-banner" style="height:80px;display:flex
-		;flex-direction:row">
+		<view class="interest-banner" style="height:80px;display:flex;flex-direction:row">
 			<view class="interest-head-icon" style="width:50%">
 
 				<image src="../../static/img/user_icon.jpg" style="width:60px;height:60px;margin:10px;border-radius:90px"></image>
@@ -56,15 +55,14 @@
 		</view>
 		<view style="margin:10px 0px;width:100%;height:5px;border-bottom:1px #FFFAFA solid"></view>
 
-		<view class="thumb-container" style="height:200px;background-color:#FFFAFA">
+		<view class="thumb-container" style="height:200px;background-color:#FFFAFA;">
 			<view class="interest-comment" style="height:80px;display:flex
 			;flex-direction:column">
 				<view class="interest-head-icon" style="width:50%">
 
 					<image src="../../static/shuijiao.jpg" style="width:60px;height:60px;margin:10px;border-radius:90px"></image>
 				</view>
-				<view class="interest-user-info"  style="width:100%;display:flex;
-				flex-direction:row">
+				<view class="interest-user-info"  style="width:100%;display:flex;flex-direction:row">
 					<view class="interest-user-title" style="height:50%;"><text style="color:grey">请评论：</text><input class="comment-input" placeholder="文明发言"></view>
 					<button style="width:200upx;height:50%;margin:20px 20px"class="mini-btn" type="primary" size="mini">发送</button>
 				</view>

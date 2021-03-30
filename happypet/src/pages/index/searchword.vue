@@ -14,9 +14,9 @@
     </view>
     <view class="hot-search" style="height:100px">
         <view class="hot-search-text" style="display:flex;flex-direction:row;margin:10px">
-            <view class="hot-search-word" style="border-radius:20%;width:100%;height:30px;background-color:red;color:white;margin:10px">猫咪</view>
-            <view class="hot-search-word" style="border-radius:20%;width:100%;height:30px;background-color:red;color:white;margin:10px">小狗旺财</view>
-            <view class="hot-search-word" style="border-radius:20%;width:100%;height:30px;background-color:red;color:white;margin:10px">羊驼</view>
+            <view class="hot-search-word" style="border-radius:20px;width:100%;height:30px;background-color:red;color:white;margin:10px">猫咪</view>
+            <view class="hot-search-word" style="border-radius:20px;width:100%;height:30px;background-color:red;color:white;margin:10px">小狗旺财</view>
+            <view class="hot-search-word" style="border-radius:20px;width:100%;height:30px;background-color:red;color:white;margin:10px">羊驼</view>
         </view>
     </view>
 
@@ -28,11 +28,11 @@
 
     </view>
 
-    <view class="hot-search" style="height:100px">
+    <view class="hot-search" style="height:30px">
         <view class="hot-search-text" style="display:flex;flex-direction:row;margin:10px">
-            <view class="hot-search-word" style="border-radius:20%;width:100%;height:30px;background-color:red;color:white;margin:10px">大熊猫</view>
-            <view class="hot-search-word" style="border-radius:20%;width:100%;height:30px;background-color:red;color:white;margin:10px">doge</view>
-            <view class="hot-search-word" style="border-radius:20%;width:100%;height:30px;background-color:red;color:white;margin:10px">羊驼</view>
+            <view class="hot-search-word" style="border-radius:20px;width:100%;height:30px;background-color:red;color:white;margin:10px">大熊猫</view>
+            <view class="hot-search-word" style="border-radius:20px;width:100%;height:30px;background-color:red;color:white;margin:10px">doge</view>
+            <view class="hot-search-word" style="border-radius:20px;width:100%;height:30px;background-color:red;color:white;margin:10px">羊驼</view>
         </view>
     </view>
    

@@ -130,6 +130,42 @@
 			}
 		},
 		{
+			"path": "pages/index/petshop_index",
+			"style": {
+				"navigationBarTitleText": "宠物商城"
+			}
+		},
+		{
+			"path": "pages/index/daily_mission",
+			"style": {
+				"navigationBarTitleText": "每日任务"
+			}
+		},
+		{
+			"path": "pages/index/pet_knowledge",
+			"style": {
+				"navigationBarTitleText": "宠物知识"
+			}
+		},
+		{
+			"path": "pages/index/shareus",
+			"style": {
+				"navigationBarTitleText": "分享我们"
+			}
+		},
+		{
+			"path": "pages/index/find_cut",
+			"style": {
+				"navigationBarTitleText": "寻找优惠"
+			}
+		},
+		{
+			"path": "pages/index/play_index",
+			"style": {
+				"navigationBarTitleText": "轻松一下"
+			}
+		},
+		{
 			"path": "pages/tabBar/component/component",
 			"style": {
 				"navigationBarTitleText": "内置组件",
@@ -1308,7 +1344,7 @@
 			"pagePath": "pages/index/welcome",
 			"iconPath": "static/component.png",
 			"selectedIconPath": "static/componentHL.png",
-			"text": "宠物视频"
+			"text": "首页"
 			},
 			{
 				"pagePath": "pages/index/discover_index",
@@ -1327,6 +1363,12 @@
 				"iconPath": "static/component.png",
 				"selectedIconPath": "static/componentHL.png",
 				"text": "我的"
+			},
+			{
+				"pagePath": "pages/index/mine_index",
+				"iconPath": "static/component.png",
+				"selectedIconPath": "static/componentHL.png",
+				"text": "宠物视频"
 			},
 			{
 				"pagePath": "pages/tabBar/component/component",

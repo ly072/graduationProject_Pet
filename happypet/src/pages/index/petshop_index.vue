@@ -12,15 +12,42 @@
             </ul>
         </view>
 
-        <view style="height:600px;width:100%;display:flex;flex-direction:column">
-            <view style="width：100%;height:200px;background:grey">
-                今日优惠
+        <view style="height:600px;width:98%;display:flex;flex-direction:column;">
+            <view style="width:95%;height:100%;border:1px solid #000;margin:5px">
+                                <view class="miaosha-title">今日优惠</view>
+                <view class="miaosha-content" style="display:flex;flex-direction:row;justify-content:center;align-items:center">
+                    <view class="miaosha-item"  v-for="index of 3" style="margin:5px">
+                        <view class="item-pic" style="width:100px;height:100px;"><img src="../../static/shop/1.jpeg" style="width:100%;height:100%"></view>
+                        <view class="item-word">日本因阿宝</view>
+                        <view class="item-price">￥998</view>
+                    </view>
+
+
+                </view>
             </view>
-            <view style="width：100%;height:200px;background:pink">
-                限时秒杀
+            <view style="width:95%;height:100%;border:1px solid #000;margin:5px">
+                <view class="miaosha-title">秒杀区域</view>
+                <view class="miaosha-content" style="display:flex;flex-direction:row;justify-content:center;align-items:center">
+                    <view class="miaosha-item"  v-for="index of 3" style="margin:5px">
+                        <view class="item-pic" style="width:100px;height:100px;"><img src="../../static/shop/1.jpeg" style="width:100%;height:100%"></view>
+                        <view class="item-word">日本因阿宝</view>
+                        <view class="item-price">￥998</view>
+                    </view>
+
+
+                </view>
             </view>
-            <view style="width：100%;height:200px;background:green">
-                商品列表
+            <view style="width:95%;height:100%;border:1px solid #000;margin:5px">
+                
+                <view class="miaosha-content" style="display:flex;flex-direction:row;justify-content:center;align-items:center" v-for="index of 3">
+                    <view class="miaosha-item"  v-for="index of 3" style="margin:5px">
+                        <view class="item-pic" style="width:100px;height:100px;"><img src="../../static/shop/1.jpeg" style="width:100%;height:100%"></view>
+                        <view class="item-word">日本因阿宝</view>
+                        <view class="item-price">￥998</view>
+                    </view>
+
+
+                </view>
             </view>
 
         </view>

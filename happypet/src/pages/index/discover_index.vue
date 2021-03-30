@@ -1,7 +1,7 @@
 <template>
 <view class="content">
     <!--头部导航栏-->
-    <view class="top-banner" style="background-color:#99CCFF;height:80px;width:100%;display:flex;flex-direction:row;">
+    <view class="top-banner" style="background-color:#99CCFF;height:80px;width:100%;display:flex;flex-direction:row;margin-bottom:20px">
         <view class="top-banner-item" style="width:100px;height:40px;margin:20px">
             <view class="top-banner-item-title" >地区</view>
             <view class="top-banner-item-content" style="color:white">上海市</view>
@@ -20,9 +20,9 @@
     </view>
 
 
-	<view class="personal-interest" style="width:100%;height:100%;" v-for="item in 3">
+	<view class="personal-interest" style="width:95%;height:100%;border:1px solid #000;margin:10px" v-for="item in 3">
 		<view class="interest-banner" style="height:80px;display:flex;flex-direction:row">
-			<view class="interest-head-icon" style="width:50%">
+			<view class="interest-head-icon" style="width:32%">
 
 				<image src="../../static/img/user_icon.jpg" style="width:60px;height:60px;margin:10px;border-radius:90px"></image>
 			</view>
@@ -53,25 +53,23 @@
 
 			</view>
 		</view>
-		<view style="margin:10px 0px;width:100%;height:5px;border-bottom:1px #FFFAFA solid"></view>
+		<view style="margin:10px 0px;width:100%;height:5px;"></view>
 
-		<view class="thumb-container" style="height:200px;background-color:#FFFAFA;">
+		<view class="thumb-container" style="height:100%;background-color:#FFFAFA;">
 			<view class="interest-comment" style="height:80px;display:flex
 			;flex-direction:column">
-				<view class="interest-head-icon" style="width:50%">
+				<view class="interest-head-icon" style="width:50%" v-if="0">
 
 					<image src="../../static/shuijiao.jpg" style="width:60px;height:60px;margin:10px;border-radius:90px"></image>
 				</view>
 				<view class="interest-user-info"  style="width:100%;display:flex;flex-direction:row">
-					<view class="interest-user-title" style="height:50%;"><text style="color:grey">请评论：</text><input class="comment-input" placeholder="文明发言"></view>
+					<view class="interest-user-title" style="height:50%;"><text style="color:grey">请评论：</text><input class="comment-input" placeholder="文明发言" style="background-color:#eeeeee;border-radius:20px"></view>
 					<button style="width:200upx;height:50%;margin:20px 20px"class="mini-btn" type="primary" size="mini">发送</button>
 				</view>
 
 			</view>
 		</view>
 
-
-		<view style="margin:40px 0px;width:100%;height:10px;border-bottom:2px grey solid"></view>
 
 	</view>
 

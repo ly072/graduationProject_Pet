@@ -1,5 +1,5 @@
 <template>
-    <view class="content">
+    <view class="content" style="width:100%;height:100%;background:url('../../static/index_background.jpg')">
     <view class="page">
         <!-- <swiper class="swiper" :circular="circular" :vertical="true" @change="onSwiperChange">
             <swiper-item v-for="item in videoList" :key="item.id">
@@ -10,7 +10,7 @@
     </view>
         <view class="uni-title uni-common-mt" style="display:inline-block">
             <ul style="width:100%">
-                <li>推荐</li>
+                <li><strong>推荐</strong></li>
                 <li>最新</li>
                 <li>视频</li>
                 <li>本地</li>
@@ -41,7 +41,7 @@
 				<text :style="{color:activeIndex === index?'#007aff':'#8f8f94'}" class="icon-item-text">{{ checked? item.unicode: item.name }}</text>
 			</view>
 		</view> -->
-        <view style="display:flex;flex-direction:row">
+        <view class="top-list" style="display:flex;flex-direction:row;margin-top:100upx">
 
             <view style="margin:10px 10px;width:70px;height:70px;background-color:#227799;color:white;border-radius:20px;display:flex;align-items:center;justify-content:center" v-on:click="hello">
                 <text>新闻动态</text>
@@ -60,7 +60,7 @@
             </view>
         </view>
 
-                <view style="display:flex;flex-direction:row">
+                <view class="bottom-list" style="display:flex;flex-direction:row">
 
             <view style="margin:10px 10px;width:70px;height:70px;background-color:#22AA99;color:white;border-radius:20px;display:flex;align-items:center;justify-content:center" v-on:click="hello_knowledge">
                 <text>宠物知识</text>
@@ -503,4 +503,10 @@
         float:left;
         margin-left:20px;
     }
+
+    .top-list view,.bottom-list view{
+        box-shadow:1px 2px 3px 4px #ccc ;
+    }
+
+
 </style>

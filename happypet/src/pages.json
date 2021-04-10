@@ -158,6 +158,12 @@
 			"style": {
 				"navigationBarTitleText": "寻找优惠"
 			}
+		},		
+		{
+			"path": "pages/index/shop_info",
+			"style": {
+				"navigationBarTitleText": "商品详情"
+			}
 		},
 		{
 			"path": "pages/index/play_index",

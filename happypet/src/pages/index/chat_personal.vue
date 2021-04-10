@@ -20,6 +20,7 @@
                 </view>
             </view>
 
+
 			<view class="userH" v-show="chat_info[index].user_chat == 1" style="flex-direction:row-reverse;">
 				<view class="userImg">
                     <image src="../../static/logo.png" mode="scaleToFill"></image>
@@ -66,8 +67,6 @@
 						"nichen":"小红",
 						"date":"2020-5-20",
 						"content":"你好，欢迎订购最新的产品"
-
-						
 					},
 										{
 						"user_chat":"1",
@@ -110,10 +109,10 @@
 
 				var arr  =
 				{
-									"user_chat":"1",
-									"nichen":"你",
-									"date":"2020-5-20",
-									"content":this.input_value
+				"user_chat":"1",
+				"nichen":"你",
+				"date":"2020-5-20",
+				"content":this.input_value
 				}
 
 				this.chat_info.push(arr);

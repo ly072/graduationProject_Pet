@@ -1,5 +1,5 @@
 <template>
-  <view class="content" style="background:white">
+  <view class="content" style="background:url('../../static/index_background.jpg')">
 
     		<view class="header">
 			  <text>宠物社区兴趣平台</text>
@@ -45,15 +45,15 @@
 			<!-- <view class="chat_item" v-for="item in userArr" :key="item.nickname" @touchstart="navChatDetail(item.id , item.nickname)"> -->
 
 
-			<view class="uni-list">
-					<view class="uni-list-cell" hover-class="uni-list-cell-hover" v-for="(item,index) in news" :key="index"
+			<view class="uni-list" style="background-color:transparent;">
+					<view class="uni-list-cell" hover-class="uni-list-cell-hover" style="background-color:transparent;" v-for="(item,index) in news" :key="index"
 					@tap="openinfo" :data-newsid="item.post_id">
 						<view class="uni-media-list">
 							<image class="uni-media-list-logo" :src="item.author_avatar">
 									<view class="img_bage" style="position:absolute;z-index:2;left:0;margin-left:50px"></view>
 							</image>
 
-							<view class="uni-media-list-body" >
+							<view class="uni-media-list-body" style="background-color:transparent;">
 								<view class="uni-media-list-text-top">{{item.title}}</view>
 								<view class="uni-media-list-text-bottom uni-ellipsis">{{item.content}}</view>
 								<view class="uni-date" style="position:absolute;z-index:2;right:0;margin-right:50px">{{item.published_at}}</view>
@@ -81,6 +81,7 @@
 export default {
     data(){
         return{
+          img:'../../static/index_background.jpg',
 				title:'',
 				strings:'',
 				news:[
@@ -218,7 +219,7 @@ methods:{
 		height: calc(100vh - 110upx - var(--window-bottom));
 		/* #endif*/
 		/*  #ifdef APP-PLUS */
-		height: calc(100vh - 110upx - var(--window-bottom) - var(--status-bar-height);
+		height: calc(100vh - 110upx - var(--window-bottom) - var(--status-bar-height));
 		/* #endif*/
 		.chat_item {
       margin:50px;
@@ -318,7 +319,6 @@ methods:{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: #ccc;
 
   }
 
@@ -330,8 +330,6 @@ methods:{
     flex-direction: row;
     align-items: center;
     justify-content: center;
-
-    background: white;
     border-bottom:gray;
      .top-bar-left{
    
@@ -391,8 +389,6 @@ methods:{
 
      .friend-list{
     margin: 2px;
-    background: #fff;
-
     box-sizing: border-box;
     text-align:center;
     width: 100%;
@@ -400,8 +396,7 @@ methods:{
     .friend-list-l{
       width: 20%;
       height:140rpx;
-      float:left;
-
+      float:left; 
          top:50%;
         height:70px;
         margin-top:70px;

@@ -14,8 +14,12 @@
                 <li>最新</li>
                 <li>视频</li>
                 <li>本地</li>
+                
             </ul>
+            
         </view>
+
+        <view><uni-search-bar radius="100" placeholder="快来搜搜吧～" @confirm="search" /></view>
 
 <view class="swiper" style="background:white">
         <swiper :interval="1000" :duration="1000" :indicator-dots="true"

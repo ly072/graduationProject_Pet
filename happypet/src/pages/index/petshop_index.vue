@@ -7,15 +7,15 @@
                     <img src="../../static/petshop_pic/cut.svg">
                     今日优惠
                 </li>
-                <li>
+                <li  v-on:click="myorder()">
                     <img src="../../static/petshop_pic/order.svg">
                     我的订单
                 </li>
-                <li>
+                <li  v-on:click="mycart()">
                     <img src="../../static/petshop_pic/cart.svg">
                     我的购物车
                 </li>
-                <li>
+                <li  v-on:click="mycut()">
                     <img src="../../static/petshop_pic/mycut.svg">
                     我的优惠券
                 </li>
@@ -89,6 +89,24 @@ console.log("create");
             
             uni.navigateTo({
                 url:"find_cut"
+            })
+        },
+                myorder(){
+            
+            uni.navigateTo({
+                url:"myorder"
+            })
+        },
+                mycart(){
+            
+            uni.navigateTo({
+                url:"mycart"
+            })
+        },
+                mycut(){
+            
+            uni.navigateTo({
+                url:"mycut"
             })
         }
 

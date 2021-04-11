@@ -1,13 +1,14 @@
 <template>
 <view class="content" style="display:flex;align-items:center;flex-direction:column">
 
-    <view class="example-body">
+    <view style="width:100%">
         
         <uni-search-bar radius="100" placeholder="自定义圆角" @confirm="search" />
     </view>
 
     <view class="table-section" style="height:50px;width:100%">
         <ul class="table-ul" style="width:100%">
+            <li>全部</li>
             <li>常识</li>
             <li>疾病</li>
             <li>护理</li>

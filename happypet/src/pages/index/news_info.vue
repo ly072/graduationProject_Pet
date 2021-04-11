@@ -12,11 +12,11 @@
 	export default {
 		data() {
 			return {
-				title:'',
-				strings:''
+				title:'测试',
+				strings:'副文本内容的测试'
 			}
 		},
-		onLoad:function(e){			
+/*		onLoad:function(e){			
 			uni.request({
 				url: 'https://unidemo.dcloud.net.cn/api/news/36kr/'+e.newsid,  //详情页数据请求
 				method: 'GET',
@@ -29,7 +29,7 @@
 				fail: () => {},
 				complete: () => {}
 			});
-		},
+		},*/
 		methods: {
 			
 		}

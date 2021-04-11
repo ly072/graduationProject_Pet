@@ -465,7 +465,7 @@
 				var newsid = e.currentTarget.dataset.newsid;   //数据id
 				console.log(newsid)
 				uni.navigateTo({  //跳转页面
-					url: '../info/info?newsid='+newsid,    //url加id
+					url: 'news_info',    //url加id
 				});
 			}
 		}

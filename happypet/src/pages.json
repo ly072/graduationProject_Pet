@@ -58,6 +58,24 @@
 			}
 		},
 		{
+			"path": "pages/index/news_info",
+			"style": {
+				"navigationBarTitleText": "新闻详情",
+				"navigationStyle":"custom",
+				"app-plus": {
+					"bounce": "vertical",
+					"titleNView": {
+						"buttons": [{
+							"text": "\ue534",
+							"fontSrc": "/static/uni.ttf",
+							"fontSize": "22px",
+							"color": "#FFFFFF"
+						}]
+					}
+				}
+			}
+		},
+		{
 			"path": "pages/index/searchword",
 			"style": {
 				"navigationBarTitleText": "请先登陆",
@@ -159,6 +177,24 @@
 				"navigationBarTitleText": "寻找优惠"
 			}
 		},		
+		{
+			"path": "pages/index/myorder",
+			"style": {
+				"navigationBarTitleText": "我的订单"
+			}
+		},
+		{
+			"path": "pages/index/mycart",
+			"style": {
+				"navigationBarTitleText": "我的购物车"
+			}
+		},
+		{
+			"path": "pages/index/mycut",
+			"style": {
+				"navigationBarTitleText": "我的优惠券"
+			}
+		},
 		{
 			"path": "pages/index/shop_info",
 			"style": {

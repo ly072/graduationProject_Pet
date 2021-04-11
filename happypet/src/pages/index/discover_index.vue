@@ -20,6 +20,12 @@
     </view>
 
 
+
+	<view class="goto-my-discover">
+		<button class="mini-btn" type="primary" size="mini">写写我的动态</button>
+	</view>
+
+
 	<view class="personal-interest" style="width:95%;height:100%;margin:10px;box-shadow:1px 2px 3px 4px #ccc ;" v-for="item in 3">
 		<view class="interest-banner" style="height:80px;display:flex;flex-direction:row">
 			<view class="interest-head-icon" style="width:32%">

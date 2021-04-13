@@ -1,5 +1,5 @@
 <template>
-    <view class="content" style="width:100%;height:100%;background:url('../../static/index_background.jpg')">
+    <scroll-view class="content" style="width:100%;height:5000px;background:url('../../static/index_background.jpg')">
     <view class="page">
         <!-- <swiper class="swiper" :circular="circular" :vertical="true" @change="onSwiperChange">
             <swiper-item v-for="item in videoList" :key="item.id">
@@ -10,10 +10,10 @@
     </view>
         <view class="uni-title uni-common-mt" style="display:inline-block">
             <ul style="width:100%">
-                <li><strong>推荐</strong></li>
+                <li><strong  style="font-size:22px">推荐</strong></li>
                 <li>最新</li>
                 <li>视频</li>
-                <li>本地</li>
+                <li>同城</li>
                 
             </ul>
             
@@ -35,7 +35,10 @@
     <view class="dots">
         <text>{{topSwiperIndex+1}}/{{topSwiper.length}}</text>
     </view>
-    </view>
+</view>
+
+<!-- 推荐条 -->
+<view class="advance-banner"><strong style="font-size:30px;color:#555555">最新发现</strong><span style="font-size:16px;margin:20px">惠州超可爱小猫咪   前往</span></view>
 
 
 
@@ -83,7 +86,34 @@
             </view>
         </view>
 
-    </view>
+
+    <view v-for="index in 10">
+        <view class="interest-banner" style="height:80px;display:flex;flex-direction:row">
+			<view class="interest-head-icon" style="width:32%">
+
+				<image src="../../static/img/user_icon.jpg" style="width:60px;height:60px;margin:10px;border-radius:90px"></image>
+			</view>
+			<view class="interest-user-info"  style="width:100%;display:flex;
+			flex-direction:column">
+				<view class="interest-user-title" style="height:100%;">是我呀</view>
+				<view class="interest-user-name" style="height:100%;">2020年9月20日</view>
+			</view>
+		</view>
+		<view class="interest-text">这个是我和狗狗的故事</view>
+		<view class="interest-image-container">
+			<image src="../../static/pet1.jpeg" style="width:100px;height:100px;margin:10px;"></image>
+			<image src="../../static/pet2.jpeg" style="width:100px;height:100px;margin:10px;"></image>
+		</view>
+					<view class="grey-divider" style="border:solid 1px #dddddd;width:90%;margin:5%"></view>
+
+
+        </view>
+
+
+        <!-- 页面底部高度控制 -->
+        <view style="height:200px"></view>
+
+    </scroll-view>
 
     
 </template>

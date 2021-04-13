@@ -208,6 +208,12 @@
 			}
 		},
 		{
+			"path": "pages/index/register",
+			"style": {
+				"navigationBarTitleText": "注册"
+			}
+		},
+		{
 			"path": "pages/tabBar/component/component",
 			"style": {
 				"navigationBarTitleText": "内置组件",

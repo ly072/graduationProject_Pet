@@ -1,14 +1,10 @@
 <template>
   <view class="content" style="background:url('../../static/index_background.jpg')">
 
-    		<view class="header">
+    	<view class="header">
 			  <text>宠物社区兴趣平台</text>
-        <view class="header_right">
-          <view class="iconfont icon-sousuo"></view>
-          <view class="iconfont icon-tianjia"></view>
-        </view>
 		</view>
-    <view class="top-bar" style="margin-top:130upx">
+    <view class="top-bar" style="margin-top:130upx" v-if="0">
         <view class="top-bar-left">
         <image src="../../static/logo.png" style="margin:20px;width:40px;height:40px;border-radius: 50%;"></image> 
         </view>
@@ -280,7 +276,6 @@ methods:{
 		top: 0;
 		/* #endif */
 		/* #ifdef APP-PLUS */
-		top: var(--status-bar-height);
 		/* #endif */
 		left: 0;
 		width: 100%;
@@ -291,7 +286,7 @@ methods:{
 		background-color: #ededed;
 		color: #000000;
 		padding: 0 10upx;
-		z-index: 3;
+		z-index: 999;
 		text {
 			font-size: 36upx;
 			font-weight: 520;
@@ -302,14 +297,6 @@ methods:{
 			justify-content: center;
 			align-items: center;
 			font-weight: 500;
-			.icon-sousuo {
-				// margin-top: 8upx;
-				font-size:50upx;
-				margin-right: 70upx;
-			}
-			.icon-tianjia {
-				font-size:45upx;
-			}
 		}
 		
 	}

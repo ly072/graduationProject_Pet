@@ -5,23 +5,24 @@
    
     </view>
     <view class="login-title">
-        密码帐号登录
+        登录
     </view>
 
     <!--表单-->
-    <view class="app-form">
-        <input class="app-form-user" placeholder="请输入帐号" @input="onInput" />
-        <input class="app-form-password" placeholder="请输入密码" @input="onInput" />
-        <button class="app-form-loginbtn" type="warn" @click="submit()" plain>登录</button>
+    <view class="app-form" style="width:70%">
+        <view style="display:flex;flex-direction:row;width:100%;margin-top:50px"><span style="width:20%;font-size:18px">帐号:</span> <input  class="app-form-user" placeholder="请输入帐号" @input="onInput" /></view>
+        
+        <view style="display:flex;flex-direction:row;width:100%;margin-top:50px"><span style="width:20%;font-size:18px">密码:</span> <input  class="app-form-password" placeholder="请输入密码" @input="onInput" /></view>
+        <button  style="margin-top:50px;width:100%;background: linear-gradient(to right,pink, #ff6666);color:white;border-style:none;border-radius:20px"  @click="submit()" plain>登录</button>
     </view>
     
     <view class="login-way">
-        <span>帐号密码登陆</span>
-        <span>|</span>
-        <span>登陆遇到问题？</span>
+        <span style="font-size:20px;" @click="jump_register()">注册帐号</span>
+        <span style="font-size:20px;margin:0px 20px">|</span>
+        <span style="font-size:20px;">登陆遇到问题？</span>
     </view>
 
-    <view>
+    <view style="margin-top:50px">
         <span>社交帐号登陆</span>
     </view>
      <view>
@@ -66,6 +67,14 @@ console.log("create");
             }
 
             })
+        },
+
+        jump_register(){
+
+               uni.navigateTo({
+                url:"register"
+            })
+
         }
     }
 }
@@ -92,24 +101,30 @@ span{
       align-items: center;
       justify-content: center;
 
-      background: #FF0000;
+      background: linear-gradient(to right,pink, #ff6666);
       border-bottom: grey;
 
   }
   .login-title{
-      margin: 50px;
+      margin:50px;
+
   }
   .app-form{
       height:300px;
-      width:70%;
+      width:90%;
     .app-form-user{
-        margin: 50px;
+
         border-bottom: thick double #aa0000;
+        display:inline-block;
+        width:90%;
+        
         
     }
     .app-form-password{
-        margin: 50px;
-        border-bottom: thick double #aa0000
+
+        border-bottom: thick double #aa0000;
+        display:inline-block;
+        width:90%;
     }
     .app-form-loginbtn{
         margin: 50px;

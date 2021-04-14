@@ -202,9 +202,21 @@
 			}
 		},
 		{
+			"path": "pages/index/admin_index",
+			"style": {
+				"navigationBarTitleText": "管理员首页"
+			}
+		},
+		{
 			"path": "pages/index/play_index",
 			"style": {
 				"navigationBarTitleText": "轻松一下"
+			}
+		},
+		{
+			"path": "pages/index/user_post_dailylife",
+			"style": {
+				"navigationBarTitleText": "用户发布"
 			}
 		},
 		{

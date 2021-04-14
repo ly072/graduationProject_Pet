@@ -168,6 +168,7 @@
 		},
 		methods: {
 			_onClick() {
+				
 				this.$emit('fabClick')
 				if (!this.popMenu) {
 					return
@@ -184,6 +185,7 @@
 			 * 按钮点击事件
 			 */
 			_onItemClick(index, item) {
+				console.log("ccc")
 				this.$emit('trigger', {
 					index,
 					item

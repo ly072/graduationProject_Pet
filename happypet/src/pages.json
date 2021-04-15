@@ -1425,10 +1425,10 @@
 				"text": "我的"
 			},
 			{
-				"pagePath": "pages/index/mine_index",
+				"pagePath": "pages/index/login",
 				"iconPath": "static/component.png",
 				"selectedIconPath": "static/componentHL.png",
-				"text": "宠物视频"
+				"text": "登陆"
 			},
 			{
 				"pagePath": "pages/tabBar/component/component",

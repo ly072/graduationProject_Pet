@@ -23,7 +23,7 @@
 
 <scroll-view scroll-x class="uni-swiper-tab">
 
-<block v-for="(tabBar,index) in tabBars" :key="index">
+<block v-for="(tabBar,index) in tabBars" >
 
 <view class="swiper-tab-list" :class="{'active': tabIndex==index}" @tap="toggleTab(index)">
 
@@ -47,7 +47,7 @@
 
 <swiper :current="tabIndex" @change="tabChange" style="height:400px">
 
-<swiper-item v-for="(content,index) in contentList" :key="index"  >
+<swiper-item v-for="(content,index) in contentList"  >
 
     <view  style="height:1200px;width:100%" v-if="tabIndex===2" >
                 <view class="uni-list" >
@@ -90,7 +90,7 @@
     <view  style="height:200px;width:100%" v-if="tabIndex===1">
                 <view class="uni-list">
                     我的消息
-                    <view class="uni-list-cell" hover-class="uni-list-cell-hover" v-for="(item2,index2) in list" :key="index2">
+                    <view class="uni-list-cell" hover-class="uni-list-cell-hover" v-for="(item2,index2) in list" >
                         <view class="uni-list-cell-navigate uni-navigate-right" @click="openinfo">
                             {{item2}}
                         </view>
@@ -107,7 +107,7 @@
 			</view>
 	</uni-section>
             <view class="uni-list" style="height:120%;width:100%" >
-                <view class="uni-list-cell" hover-class="uni-list-cell-hover" v-for="(item3,index3) in listPersonalInfo" :key="index3" @click="openinfo">
+                <view class="uni-list-cell" hover-class="uni-list-cell-hover" v-for="(item3,index3) in listPersonalInfo"  @click="openinfo">
                     <view class="uni-list-cell-navigate uni-navigate-right">
                         {{item3}}
 
@@ -234,10 +234,14 @@ components:{
 },
 
 onLoad() {
+    console.log("");
 
     this.getList();
 
 },
+        onReady() {
+            this.getList();
+        },
 
 methods: {
 
@@ -252,8 +256,9 @@ methods: {
 
 
             getList() {
+                console.log("do")
                 uni.request({
-                    url: 'http://localhost:3000/func/jifen', 
+                    url: 'http://118.25.109.25:3000/func/jifen', 
                     success: (res) => {
                         console.log(res.data);
                          this.jifen =res.data;

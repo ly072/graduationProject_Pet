@@ -1425,12 +1425,6 @@
 				"text": "我的"
 			},
 			{
-				"pagePath": "pages/index/login",
-				"iconPath": "static/component.png",
-				"selectedIconPath": "static/componentHL.png",
-				"text": "登陆"
-			},
-			{
 				"pagePath": "pages/tabBar/component/component",
 				"iconPath": "static/component.png",
 				"selectedIconPath": "static/componentHL.png",

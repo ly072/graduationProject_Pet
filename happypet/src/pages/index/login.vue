@@ -50,6 +50,39 @@ export default {
 console.log("create");
     },
     methods:{
+           timeProcessing(){
+
+
+let Time = new Date();
+
+
+var year = Time.getFullYear()
+var month = Time.getMonth() + 1
+var day = Time.getDate()
+var hour = Time.getHours() 
+var minute = Time.getMinutes() 
+var second = Time.getSeconds() 
+if(month >= 1 && month <= 9){
+month = "0" + month;}
+if(day >= 0 && day <= 9){
+day = "0" + day
+}
+if(hour >= 0 && hour <= 9){
+hour = "0" + hour
+}
+if(minute >= 0 && minute <= 9){
+minute = "0" + minute
+}
+if(second >= 0 && second <= 9){
+second = "0" + second
+}
+var timestemp = year + month + day  + hour + minute  + second
+console.log(timestemp)//Mon Jun 24 2019 11:08:48 GMT+0800 (中国标准时间)
+
+//1561345728000
+return timestemp;
+
+} ,
         onInput_user(e){
             this.user=e.target.value;
             //console.log(this.user)   ok
@@ -59,6 +92,103 @@ console.log("create");
             //console.log(this.password) ok 
         },
         submit(){
+
+
+            if((this.password === '') || (this.user === '')){
+                uni.showToast({
+                    title: '请完善填写',
+                    icon: 'none'
+                });
+
+            }
+
+            else{
+
+                uni.request({
+                    url: 'http://localhost:3000/func/login', 
+                     data:{user:this.user,password:this.password,r_time:this.timeProcessing()},
+                      method: 'GET',
+                       header: {},
+                    success: (res) => {
+                        console.log(res.data); 
+                        if(res.data != "-1"){
+
+
+
+                        //添加类似cookie保存用户信息
+                        // const store = new Vuex.Store({  
+                        //     state: {  
+                        //         uerInfo: {},  
+                        //         hasLogin: false  
+                        //     },  
+                        //     mutations: {  
+                        //         login(state, provider) {//改变登录状态  
+                        //             state.hasLogin = true  
+                        //             state.uerInfo.token = provider.token  
+                        //             state.uerInfo.userName = provider.user_name  
+                        //             uni.setStorage({//将用户信息保存在本地  
+                        //                 key: 'uerInfo',  
+                        //                 data: provider  
+                        //             })  
+                        //         },  
+                        //         logout(state) {//退出登录  
+                        //             state.hasLogin = false  
+                        //             state.uerInfo = {}  
+                        //             uni.removeStorage({  
+                        //                 key: 'uerInfo'  
+                        //             })  
+                        //         }  
+                        //     }  
+                        // })
+
+            uni.navigateBack({
+
+            success: () => {
+
+                            uni.showToast({
+								title: '登录成功',
+								icon: 'none'
+                            });
+                
+
+                let page = getCurrentPages().pop();  //跳转页面成功之后
+
+                if (!page) return;
+
+                let options = {
+
+                user_login:1  
+
+
+
+                }
+                console.log('hellohaha')
+
+
+            }
+
+            })
+
+
+                        }
+                    },
+                    fail:(res) =>{
+                    //失败时候回调
+                    uni.showToast({
+                    title: '网络请求出错',
+                    icon: 'none'
+                });
+                }
+                });
+
+
+            }
+
+
+
+
+
+
             if((this.user === "user01") && (this.password === "123456"))
             {
 

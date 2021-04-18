@@ -1,5 +1,5 @@
 <template>
-	<view class="product">
+	<view class="product">g
 		<image class="product-image" :src="image ? image : 'https://via.placeholder.com/150x200'"></image>
 		<view class="product-title">{{title}}</view>
 		<view class="product-price">

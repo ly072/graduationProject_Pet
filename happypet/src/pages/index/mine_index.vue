@@ -58,7 +58,7 @@
                         </view>
                     </view>
 
-                                        <view class="uni-list-cell" hover-class="uni-list-cell-hover"@click="openinfo" >
+                                        <view class="uni-list-cell" hover-class="uni-list-cell-hover" @click="openinfo" >
                         <view class="uni-list-cell-navigate uni-navigate-right">
                             {{listPersonalInfo[1]}}
                         </view>
@@ -239,9 +239,6 @@ onLoad() {
     this.getList();
 
 },
-        onReady() {
-            this.getList();
-        },
 
 methods: {
 
@@ -261,7 +258,7 @@ methods: {
                     url: 'http://118.25.109.25:3000/func/jifen', 
                     success: (res) => {
                         console.log(res.data);
-                         this.jifen =res.data;
+                         this.jifen =res.data;      
                     }
                 });
             },

@@ -75,6 +75,8 @@
 			</view>
 		</view>
 		<view class="interest-text">这个是我和狗狗的故事</view>
+
+		 <view style="border-top:#dddddd solid 1px;display:flex;flex-direction:row;width:100%;margin-top:20px"><view style="width:100%" rows="3" cols="20">12312312</view></view>
 		<view class="interest-image-container">
 			<image src="../../static/pet1.jpeg" style="width:100px;height:100px;margin:10px;"></image>
 			<image src="../../static/pet2.jpeg" style="width:100px;height:100px;margin:10px;"></image>
@@ -137,6 +139,18 @@
 
 <script>
 
+/*宠物朋友圈信息表*/
+/*create table u_petFriendCircleInfo(
+    info_id int not null AUTO_INCREMENT,
+    thumb int not null,
+    content varchar(2000) not null,
+    title varchar(100) not null,
+    muti_pic text not null,
+	u_id int not null,
+	i_time timestamp not null,
+    primary key (info_id)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;*/
+
 	let platform = 'other'
 	// #ifdef APP-NVUE
 	platform = uni.getSystemInfoSync().platform
@@ -179,7 +193,7 @@ export default {
     
     data(){
         		return{
-									fabShow: false,
+				fabShow: false,
 				isShow: false,
 				isAndroidNvue: platform === 'android',
 				styles: {
@@ -192,7 +206,10 @@ export default {
 			height:"",
 			textarea:false,
 			placeholder:'请输入内容',
-			input:""
+			input:"",
+			/*用来存放宠物朋友圈信息*/ 
+			petFriendCircleInfo:["{}"]
+
 		}
 
 

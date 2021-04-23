@@ -62,7 +62,7 @@
 	</view>
 
 
-	<view class="personal-interest" style="width:95%;height:100%;margin:10px;box-shadow:1px 2px 3px 4px #ccc ;" v-for="item in 3">
+	<view class="personal-interest" style="width:95%;height:100%;margin:10px;box-shadow:1px 2px 3px 4px #ccc ;" v-for="(item,index) in 3">
 		<view class="interest-banner" style="height:80px;display:flex;flex-direction:row">
 			<view class="interest-head-icon" style="width:32%">
 
@@ -74,7 +74,7 @@
 				<view class="interest-user-name" style="height:100%;">2020年9月20日</view>
 			</view>
 		</view>
-		<view class="interest-text">这个是我和狗狗的故事</view>
+		<view class="interest-text">{{disc_title[index]}}</view>
 
 		 <view style="border-top:#dddddd solid 1px;display:flex;flex-direction:row;width:100%;margin-top:20px"><view style="width:100%" rows="3" cols="20">12312312</view></view>
 		<view class="interest-image-container">
@@ -207,6 +207,7 @@ export default {
 			textarea:false,
 			placeholder:'请输入内容',
 			input:"",
+			disc_title:['happy1','happy2','happy3'],
 			/*用来存放宠物朋友圈信息*/ 
 			petFriendCircleInfo:["{}"]
 

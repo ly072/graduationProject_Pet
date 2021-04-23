@@ -6,9 +6,9 @@
 
 
     </view>
-    <view class="price-banner" style="background-color:red">￥35</view>
-    <view class="introduce">猫咪体内去虫药 2片/盒 可三个月喂一次</view>
-    <view class="cut">暂无活动</view>
+    <view class="price-banner" style="background-color:#eeeeee;font-size:20px;color:red;font-weight:600">￥35</view>
+    <view class="introduce" style="margin-top:40px">猫咪体内去虫药 2片/盒 可三个月喂一次</view>
+    <view class="cut" style=“margin:40px”>暂无活动</view>
 	<view class="uni-goods-nav" style="position: fixed;bottom: 0;width:100%">
 		<!-- 底部占位 -->
 		<view class="uni-tab__seat" />
@@ -56,6 +56,19 @@
 	 */
 
 export default {
+			onLoad() {
+			uni.$on('update',(data)=>{
+			console.log('监听到时间来自update,携带参数msg为:' + data.msg)
+			})
+			console.log("23")
+			uni.getStorage({
+                key:'swiper_info',
+                success:(res)=>{
+                    this.info = res.data
+                    console.log(res.data)
+                }
+            })
+		},
     
 	name: 'UniGoodsNav',
 		components: {
@@ -99,6 +112,9 @@ export default {
 			onClick(index, item) {
                 if(index == 1)
                 {
+
+
+				uni.$emit('update',{msg:'页面更新'});
                 uni.navigateTo({  //跳转页面
 					url: 'mycart',    //url加id
 				});

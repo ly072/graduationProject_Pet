@@ -1,9 +1,5 @@
 <template>
   <view class="content" style="background:url('../../static/index_background.jpg')">
-
-    	<view class="header">
-			  <text>宠物社区兴趣平台</text>
-		</view>
     <view class="top-bar" style="margin-top:130upx" v-if="0">
         <view class="top-bar-left">
         <image src="../../static/logo.png" style="margin:20px;width:40px;height:40px;border-radius: 50%;"></image> 

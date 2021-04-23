@@ -67,6 +67,8 @@
 
 	</view>
 
+	<view class="go_to_buy" style="margin-top:40px;height:100px;"><button class=“buy” style="background-color:#ffcccc;color:red">立即购买</button></view>
+
 
 </view>
 
@@ -81,10 +83,11 @@
 		data() {
 			return {
 				flag: true, // 用于判断用户购物车是否有商品，没有商品为true，有商品为false
-				cartlist: [], // 购物车商品信息
+				cartlist: ["大降价","998","娃哈哈"], // 购物车商品信息
 				allchecked: true //默认全选为true，因为后台数据没有是否选中的信息
 			}
 		},
+
 		computed: {
 			// 计算选中商品数量
 			totalNum() {
@@ -281,7 +284,8 @@
 
 <style lang="scss" scoped>
    .cartlist {
-		background-color: #999999;
+		background-color: #ffcccc;
+		box-shadow:1px 2px 3px 4px #ffcccc ;
 		padding: 10px;
 
 		.cartitem {

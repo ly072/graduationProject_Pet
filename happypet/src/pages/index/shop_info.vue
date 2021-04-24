@@ -1,13 +1,13 @@
 <template>
 <view class="content">
-    <img src="../../static/shop/1.jpeg" style="width:100%;height:300px">
+    <img src='../../static/shopimg_2.png' style="width:100%;height:300px">
 
     <view>
 
 
     </view>
     <view class="price-banner" style="background-color:#eeeeee;font-size:20px;color:red;font-weight:600">￥35</view>
-    <view class="introduce" style="margin-top:40px">猫咪体内去虫药 2片/盒 可三个月喂一次</view>
+    <view class="introduce" style="margin-top:40px">{{cur_shop_item_word}}</view>
     <view class="cut" style=“margin:40px”>暂无活动</view>
 	<view class="uni-goods-nav" style="position: fixed;bottom: 0;width:100%">
 		<!-- 底部占位 -->
@@ -56,18 +56,21 @@
 	 */
 
 export default {
+			data(){
+				return{
+					cur_shop_item_word:''
+
+				}
+			},
 			onLoad() {
-			uni.$on('update',(data)=>{
-			console.log('监听到时间来自update,携带参数msg为:' + data.msg)
-			})
-			console.log("23")
 			uni.getStorage({
-                key:'swiper_info',
+                key:'cur_shop_item_word',
                 success:(res)=>{
-                    this.info = res.data
-                    console.log(res.data)
+					console.log(res.data);
+					this.cur_shop_item_word=res.data;
                 }
-            })
+			})
+			
 		},
     
 	name: 'UniGoodsNav',

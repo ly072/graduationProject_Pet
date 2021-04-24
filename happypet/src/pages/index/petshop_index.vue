@@ -27,11 +27,11 @@
 
             <view style="width:95%;height:100%;margin:5px;box-shadow:1px 2px 3px 4px #ccc ;">
                 
-                <view class="miaosha-content" style="display:flex;flex-direction:row;justify-content:center;align-items:center" v-for="(item,index) in shop_img">
-                    <view class="miaosha-item" v-on:click="shop_info()" v-for="index2 of 3" style="margin:5px">
-                        <view class="item-pic" style="width:100px;height:100px;"><img :src="shop_img[index].src" style="width:100%;height:100%"></view>
-                        <view class="item-word">{{shop_item_word[index]}}</view>
-                        <view class="item-price">￥998</view>
+                <view class="miaosha-content" style="display:flex;flex-flow:row wrap;" >
+                    <view class="miaosha-item"  v-on:click="shop_info()"  style="margin:5px;width:100px;height:200px" v-for="(item,index) in shop_img">
+                        <view class="item-pic" style="width:100%;height:100px;"><img :src="item.src" style="width:100%;height:100%"></view>
+                        <view class="item-word" style="width:100%;height:50px;overflow:hidden;text-overflow:ellipsis;">{{shop_item_word[index]}}</view>
+                        <view class="item-price" style="width:100%;height:50px;">￥998</view>
                     </view>
 
 
@@ -52,9 +52,11 @@
 <script>
 export default {
 
+
         data(){
         return{
-            shop_img:[
+            shop_itemnum:3,
+                shop_img:[
                 {src:require('../../static/shopimg_1.png')},
                 {src:require('../../static/shopimg_2.png')},
                 {src:require('../../static/shopimg_3.png')},
@@ -63,7 +65,7 @@ export default {
                 {src:require('../../static/shopimg_6.png')},
                 {src:require('../../static/shopimg_7.png')},
                 {src:require('../../static/shopimg_9.png')}
-            ],
+            ],  
             shop_item_word:[
                 "宠物托运上门服务全国空运猫猫狗狗航空运输铁路汽运随机手续运输",
                 "不锈钢狗牌项链 钛钢宠物身份牌挂牌定做 广告促销小礼品定制logo",
@@ -73,7 +75,9 @@ export default {
                 "狗狗牵引绳自动伸缩遛狗绳狗链子中型小型犬泰迪博美柯基宠物用品",
                 "狗狗磨牙棒除口臭骨头幼犬补钙咬胶去泰迪耐咬玩具零食小狗洁齿棒",
                 "狗狗牵引绳狗链狗绳泰迪狗链子狗绳子小型犬胸背带遛狗绳宠物用品"
-            ]
+            ],
+            cur_img:"require('../../static/shopimg_2.png')",
+            cur_shop_item_word:"不锈钢狗牌项链 钛钢宠物身份牌挂牌定做 广告促销小礼品定制logo"
         }
 
     },
@@ -82,16 +86,25 @@ export default {
     onLoad(){
 console.log("create");
 
+
+    },   
+     methods:{
+
+        shop_info(){
 uni.setStorage({
-                key:'swiper_info',
-                data:21123123,
+                key:'cur_img',
+                data:this.cur_img,
+                success:()=>{
+                    console.log('存入成功')
+                }
+            }),
+            uni.setStorage({
+                key:'cur_shop_item_word',
+                data:this.cur_shop_item_word,
                 success:()=>{
                     console.log('存入成功')
                 }
             })
-    },   
-     methods:{
-        shop_info(){
             
             uni.navigateTo({
                 url:"shop_info"

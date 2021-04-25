@@ -28,7 +28,7 @@
             <view style="width:95%;height:100%;margin:5px;box-shadow:1px 2px 3px 4px #ccc ;">
                 
                 <view class="miaosha-content" style="display:flex;flex-flow:row wrap;" >
-                    <view class="miaosha-item"  v-on:click="shop_info()"  style="margin:5px;width:100px;height:200px" v-for="(item,index) in shop_img">
+                    <view class="miaosha-item"  @click="shop_info" id="shop-item" style="margin:5px;width:100px;height:200px" v-for="(item,index) in shop_img">
                         <view class="item-pic" style="width:100%;height:100px;"><img :src="item.src" style="width:100%;height:100%"></view>
                         <view class="item-word" style="width:100%;height:50px;overflow:hidden;text-overflow:ellipsis;">{{shop_item_word[index]}}</view>
                         <view class="item-price" style="width:100%;height:50px;">￥998</view>
@@ -84,13 +84,16 @@ export default {
     
 
     onLoad(){
-console.log("create");
+        console.log("create");
 
 
     },   
      methods:{
 
-        shop_info(){
+
+
+        shop_info: function(e){
+               console.log(e.target);
 uni.setStorage({
                 key:'cur_img',
                 data:this.cur_img,

@@ -27,7 +27,7 @@
                 </view>
                 <view class="userType">
                     <view class="userN">
-                        <text>你</text>
+                        <text>用户</text>
                         <text>{{chat_info[index].date}}</text>
                     </view>
                     <view class="textType">
@@ -65,13 +65,13 @@
 					{
 						"user_chat":"0",
 						"nichen":"小红",
-						"date":"2020-5-20",
+						"date":"11:12:06",
 						"content":"你好，欢迎订购最新的产品"
 					},
 										{
 						"user_chat":"1",
 						"nichen":"小黄",
-						"date":"2020-5-20",
+						"date":"11:12:06",
 						"content":"你好，欢迎订购最新的产品"
 
 						
@@ -107,16 +107,30 @@
 			submit: function(e){
 				console.log('yellow')
 
+
+				if(this.input_value == "")
+				{
+					uni.showToast({
+								title: '当前信息为空',
+								icon: 'none'
+							});
+					return;
+				}
 				var arr  =
 				{
 				"user_chat":"1",
 				"nichen":"你",
-				"date":"2020-5-20",
+				"date":"11:12:06",
 				"content":this.input_value
 				}
 
 				this.chat_info.push(arr);
+
+
+
+
 				this.input_value="";
+
 
 				
 				

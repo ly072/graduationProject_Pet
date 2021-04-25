@@ -6,6 +6,11 @@ import pageFoot from './components/page-foot.vue'
 import uLink from '@/components/uLink.vue'
 import store from './store'
 
+
+import screenTextScroll from './components/screenTextScroll.vue'
+
+Vue.component('textscroll',screenTextScroll)
+
 Vue.config.productionTip = false
 
 Vue.prototype.$store = store
@@ -19,6 +24,9 @@ Vue.prototype.$adpid = "1111111111"
 Vue.component('page-head', pageHead)
 Vue.component('page-foot', pageFoot)
 Vue.component('uLink', uLink)
+
+
+
 
 App.mpType = 'app'
 

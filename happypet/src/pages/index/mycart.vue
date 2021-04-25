@@ -2,54 +2,31 @@
 <view class="content">
 
 <view>
-		<view class="" v-if="0">
-			购物车空空如也，请先选购</navigator>
-		</view>
-		<view class="" v-else>
-			<!-- <view class="cartlist">
-				<view class="cartitem" v-for="(item,index) of cartlist" :key="index">
+		<view class="main">
+			<view class="cartlist">
+				<view class="cartitem" v-for="(item,index) of cartlist" :key="index" style="height:120px;width:100%">
 					<checkbox-group @change="selected(item)">
 						<checkbox class="xuanzhong" :checked="item.flag" />
 					</checkbox-group>
 
-					<image :src="item.proimg" mode=""></image>
-					<view class="itemright">
-						<view class="">
-							{{item.proname}}
+					<image src='../../static/pet1.jpeg' mode=""></image>
+					<view class="itemright" style="float:right;display:flex;flex-direction:row;" >
+						<view class="proname" style="height:20px;line-hegiht:30px;margin-right:30px;margin:10px">
+							狗钥匙
 						</view>
 						<view class="">
-							￥{{item.price}}
-							<text @click="reduce(item)">[-]</text>
+							￥577
+							<view  style="height:20px;width:20px;line-height:15px;margin-right:30px;font-size:20px;background-color:#ff5555;margin:2px;text-align:center;"  @click="reduce(item)">-</view>
 							{{item.num}}
-							<text @click="add(item)">[+]</text>
+							<view style="height:20px;width:20px;line-height:15px;margin-right:30px;font-size:20px;background-color:#ff5555;margin:2px;text-align:center;" @click="add(item)">+</view>
 							<text class="del" @click="del(item,index)">删除</text>
 						</view>
 					</view>
 				</view>
-			</view> -->
-
-
-            <view class="cartlist">
-				<view class="cartitem" v-for="index in 5" :key="index">
-					<!-- <checkbox-group @change="selected(item)">
-						<checkbox class="xuanzhong" :checked="1" />
-					</checkbox-group> -->
-
-					<image :src="213" mode=""></image>
-					<view class="itemright">
-						<view class="">
-							狗粮
-						</view>
-						<view class="">
-							￥234
-							<!-- <text @click="reduce(item)">[-]</text>
-							5
-							<text @click="add(item)">[+]</text> -->
-							<!-- <text class="del" @click="del(item,index)">删除</text> -->
-						</view>
-					</view>
-				</view>
 			</view>
+
+
+
 			<view class="di">
 				<view class="quanxuan">
 					<checkbox-group @change="selectedall()">
@@ -67,7 +44,7 @@
 
 	</view>
 
-	<view class="go_to_buy" style="margin-top:40px;height:100px;"><button class=“buy” style="background-color:#ffcccc;color:red">立即购买</button></view>
+	<view class="go_to_buy" style="width:100%;position:absolute;bottom:0;height:50px;display:flex;flex-direction:row;align-items:center;justify-content:center"><span style="width:65%">合计：59￥</span><button class=“buy” style="background-color:#f0c566;color:red;width:35%" @click="buy()">立即购买</button></view>
 
 
 </view>
@@ -155,6 +132,19 @@
 			}
 		},
 		methods: {
+			buy(){
+				uni.requestPayment({
+					provider: 'alipay',
+					orderInfo: orderInfo,
+					success: function(res) {
+						console.log('success:' + JSON.stringify(res));
+						},
+					fail: function(err) {
+						console.log('fail:' + JSON.stringify(err));
+						}
+				});
+
+			},
 			// 减号操作
 			reduce(item) {
 				let num = item.num
@@ -284,12 +274,13 @@
 
 <style lang="scss" scoped>
    .cartlist {
-		background-color: #ffcccc;
-		box-shadow:1px 2px 3px 4px #ffcccc ;
+		background-color: #f0c566;
+		box-shadow:1px 2px 3px 4px #f0c566 ;
 		padding: 10px;
 
 		.cartitem {
-			background-color: #FFFFFF;
+			background-color: #eeeeee;
+			box-shadow:1px 2px 3px 4px #f0c566 ;
 			height: 50px;
 			margin-bottom: 10px;
 

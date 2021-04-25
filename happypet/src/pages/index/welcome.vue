@@ -1,12 +1,12 @@
 <template>
     <scroll-view class="content" style="width:100%;height:5000px;background:url('../../static/index_background.jpg')">
     <view class="page">
-        <!-- <swiper class="swiper" :circular="circular" :vertical="true" @change="onSwiperChange">
+        <swiper class="swiper" :circular="circular" :vertical="true" @change="onSwiperChange">
             <swiper-item v-for="item in videoList" :key="item.id">
                 <video class="video" :id="item.id" :ref="item.id" :src="item.src" :controls="false" :loop="true"
                     :show-center-play-btn="false"></video>
             </swiper-item>
-        </swiper> -->
+        </swiper>
     </view>
         <view class="uni-title uni-common-mt" style="display:inline-block">
             <ul style="width:100%">
@@ -39,7 +39,7 @@
 
 <!-- 推荐条 -->
 <view class="advance-banner"><strong style="font-size:30px;color:#555555">最新发现</strong><span style="font-size:16px;margin:20px">惠州超可爱小猫咪   前往</span></view>
-
+<textscroll :list="list"/>
 
 
 		<!-- <view class="example-body" v-show="0">
@@ -78,7 +78,7 @@
             </view>
 
             <view style="width:70px;margin:10px 10px;height:70px;background-color:red;color:white;border-radius:20px;display:flex;align-items:center;justify-content:center" v-on:click="hello_cut">
-                <text>寻找优惠</text>
+                <text>今日优惠</text>
             </view>
 
             <view style="width:70px;margin:10px 10px;height:70px;background-color:#992211;color:white;border-radius:20px;display:flex;align-items:center;justify-content:center" v-on:click="hello_play">
@@ -119,7 +119,7 @@
 </template>
 <script>
     const videoData = [{
-            src: 'https://img.cdn.aliyun.dcloud.net.cn/guide/uniapp/hellouniapp/hello-nvue-swiper-vertical-01.mp4'
+            src: 'https://mp4.vjshi.com/2021-04-24/ad1da71e53ee4a43ba496ada9264e99f.mp4'
         },
         {
             src: 'https://img.cdn.aliyun.dcloud.net.cn/guide/uniapp/hellouniapp/hello-nvue-swiper-vertical-02.mp4'
@@ -141,6 +141,7 @@
     export default {
         data() {
             return {
+                 list:['1分钟前，无夏购买了会员','2分钟前，无夏购买了会员','3分钟前，无夏购买了会员'],
 
                    topSwiperIndex: 0,
         topSwiper: [
@@ -212,7 +213,7 @@
         },
         methods: {
 
-               topSwiperTab(e) {
+        topSwiperTab(e) {
         var that = this;
         this.topSwiperIndex = Number(e.target.current);
     },
@@ -240,7 +241,7 @@
             hello_video: function(){
                 console.log("hello")
                             uni.navigateTo({
-                url:"swiper-vertical"
+                url:"pet_video"
             })
             },
             hello_shop: function(){
@@ -276,7 +277,7 @@
             hello_play: function(){
                 console.log("hello")
                             uni.navigateTo({
-                url:"play_index"
+                url:"searchword"
             })
             },
             onSwiperChange(e) {

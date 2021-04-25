@@ -166,6 +166,12 @@
 			}
 		},
 		{
+			"path": "pages/index/pet_video",
+			"style": {
+				"navigationBarTitleText": "宠物视频"
+			}
+		},
+		{
 			"path": "pages/index/shareus",
 			"style": {
 				"navigationBarTitleText": "分享我们"
